@@ -74,7 +74,7 @@ export default function Navbar() {
           <div className={`flex items-center gap-4 ${!isHome ? "hidden md:flex" : "flex"}`}>
             {/* Mail Icon */}
             <a
-              href="mailto:nour.mohamed@example.com"
+              href="mailto:nourmohamedanwar@gmail.com"
               className="relative block overflow-hidden h-[28px] w-[28px] group shrink-0"
               title="البريد الإلكتروني"
             >
@@ -178,7 +178,7 @@ export default function Navbar() {
                   <Instagram className="w-6 h-6 stroke-[1.75]" />
                 </a>
                 <a
-                  href="mailto:nour.mohamed@example.com"
+                  href="mailto:nourmohamedanwar@gmail.com"
                   className="text-black hover:opacity-50 transition-opacity"
                   title="البريد الإلكتروني"
                 >

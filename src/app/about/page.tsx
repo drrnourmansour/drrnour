@@ -206,7 +206,7 @@ export default function AboutPage() {
             <Instagram className="w-4 h-4" /> @drrnour
           </a>
           <a
-            href="mailto:nour.mohamed@example.com"
+            href="mailto:nourmohamedanwar@gmail.com"
             className="border border-white/30 text-white font-sans text-sm font-bold px-6 py-3 rounded-full hover:bg-white/10 transition-colors flex items-center gap-2"
           >
             <Mail className="w-4 h-4" /> راسلني

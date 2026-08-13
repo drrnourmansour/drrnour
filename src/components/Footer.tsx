@@ -85,7 +85,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="mailto:nour.mohamed@example.com"
+              href="mailto:nourmohamedanwar@gmail.com"
               className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-block"
               title="البريد الإلكتروني"
             >
