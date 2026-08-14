@@ -167,7 +167,7 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
             >
               <div className="font-bold text-base sm:text-lg md:text-xl mb-1">المكتبي Desktop</div>
               <div className="text-xs sm:text-sm text-black/60 mb-3 sm:mb-4">للتصاميم المطبوعة والمستندات</div>
-              <div className="text-xl sm:text-2xl md:text-3xl font-extrabold font-serif">$79</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-extrabold font-sans">$79</div>
             </div>
 
             <div
@@ -178,7 +178,7 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
             >
               <div className="font-bold text-base sm:text-lg md:text-xl mb-1">مواقع الويب Webfont</div>
               <div className="text-xs sm:text-sm text-black/60 mb-3 sm:mb-4">حتى 500,000 مشاهدة شهرياً</div>
-              <div className="text-xl sm:text-2xl md:text-3xl font-extrabold font-serif">$99</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-extrabold font-sans">$99</div>
             </div>
 
             <div
@@ -189,7 +189,7 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
             >
               <div className="font-bold text-base sm:text-lg md:text-xl mb-1">التطبيقات App/ePub</div>
               <div className="text-xs sm:text-sm text-black/60 mb-3 sm:mb-4">تطبيق جوال واحد أو كتاب رقمي</div>
-              <div className="text-xl sm:text-2xl md:text-3xl font-extrabold font-serif">$149</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-extrabold font-sans">$149</div>
             </div>
           </div>
 
