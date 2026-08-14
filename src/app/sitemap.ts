@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://nourmohamed.com";
+  const baseUrl = "https://drrnour.com";
 
   const fontSlugs = [
     "talheen",

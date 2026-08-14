@@ -7,7 +7,7 @@ import PageTransition from "@/components/PageTransition";
 import TransitionProvider from "@/components/TransitionProvider";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nourmohamed.com"),
+  metadataBase: new URL("https://drrnour.com"),
   title: {
     default: "نور محمد | مصمم وأخصائي خطوط عربية ولاتينية",
     template: "%s | نور محمد",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "خط روعة",
     "خط نسخ",
   ],
-  authors: [{ name: "نور محمد", url: "https://nourmohamed.com" }],
+  authors: [{ name: "نور محمد", url: "https://drrnour.com" }],
   creator: "نور محمد",
   publisher: "مسبك نور محمد للخطوط الرقمية",
   formatDetection: {
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     title: "نور محمد | مصمم وأخصائي خطوط عربية ولاتينية",
     description:
       "مسبك خطوط عربية ولاتينية معاصرة بتصميم مبتكر وهندسة طباعية رقمية فائقة الجودة بقلم المصمم نور محمد.",
-    url: "https://nourmohamed.com",
+    url: "https://drrnour.com",
     siteName: "نور محمد للخطوط الرقمية",
     locale: "ar_SA",
     type: "website",
     images: [
       {
-        url: "https://nourmohamed.com/og-image.jpg",
+        url: "https://drrnour.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "نور محمد — خطوط عربية ولاتينية",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     title: "نور محمد | مصمم وأخصائي خطوط عربية ولاتينية",
     description: "مسبك خطوط عربية ولاتينية معاصرة وهندسة طباعية رقمية من تصميم نور محمد.",
     creator: "@drrnour",
-    images: ["https://nourmohamed.com/og-image.jpg"],
+    images: ["https://drrnour.com/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -91,11 +91,11 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://nourmohamed.com/#person",
+      "@id": "https://drrnour.com/#person",
       name: "نور محمد",
       alternateName: "Nour Mohamed",
       jobTitle: "مصمم خطوط وأخصائي هندسة طباعية",
-      url: "https://nourmohamed.com",
+      url: "https://drrnour.com",
       sameAs: [
         "https://instagram.com/drrnour",
         "https://behance.net",
@@ -110,23 +110,23 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://nourmohamed.com/#website",
-      url: "https://nourmohamed.com",
+      "@id": "https://drrnour.com/#website",
+      url: "https://drrnour.com",
       name: "نور محمد | مصمم خطوط عربية ولاتينية",
       description: "مسبك خطوط رقمية عربية ولاتينية معاصرة من تصميم نور محمد.",
       inLanguage: "ar",
       publisher: {
-        "@id": "https://nourmohamed.com/#person",
+        "@id": "https://drrnour.com/#person",
       },
     },
     {
       "@type": "Organization",
-      "@id": "https://nourmohamed.com/#organization",
+      "@id": "https://drrnour.com/#organization",
       name: "مسبك نور محمد للخطوط الرقمية",
-      url: "https://nourmohamed.com",
-      logo: "https://nourmohamed.com/logo.png",
+      url: "https://drrnour.com",
+      logo: "https://drrnour.com/logo.png",
       founder: {
-        "@id": "https://nourmohamed.com/#person",
+        "@id": "https://drrnour.com/#person",
       },
     },
   ],

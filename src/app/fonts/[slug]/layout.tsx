@@ -89,13 +89,13 @@ export async function generateMetadata({
     openGraph: {
       title: `خط ${font.nameAr} (${font.nameEn}) | نور محمد`,
       description,
-      url: `https://nourmohamed.com/fonts/${params.slug}`,
+      url: `https://drrnour.com/fonts/${params.slug}`,
       type: "website",
       locale: "ar_SA",
       siteName: "مسبك نور محمد للخطوط",
       images: [
         {
-          url: `https://nourmohamed.com/og-font-${params.slug}.jpg`,
+          url: `https://drrnour.com/og-font-${params.slug}.jpg`,
           width: 1200,
           height: 630,
           alt: `خط ${font.nameAr} — نور محمد`,

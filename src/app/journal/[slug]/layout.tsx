@@ -74,7 +74,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${title} | مدوّنة نور محمد`,
       description,
-      url: `https://nourmohamed.com/journal/${params.slug}`,
+      url: `https://drrnour.com/journal/${params.slug}`,
       type: "article",
       publishedTime: article.date,
       authors: ["نور محمد"],
@@ -109,19 +109,19 @@ export default function JournalArticleLayout({
         author: {
           "@type": "Person",
           name: "نور محمد",
-          url: "https://nourmohamed.com",
+          url: "https://drrnour.com",
         },
         publisher: {
           "@type": "Organization",
           name: "مسبك نور محمد للخطوط الرقمية",
           logo: {
             "@type": "ImageObject",
-            url: "https://nourmohamed.com/logo.png",
+            url: "https://drrnour.com/logo.png",
           },
         },
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `https://nourmohamed.com/journal/${params.slug}`,
+          "@id": `https://drrnour.com/journal/${params.slug}`,
         },
       }
     : null;
