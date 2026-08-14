@@ -95,9 +95,9 @@ export default function JournalPage() {
             <button
               key={tag}
               onClick={() => setActiveTag(tag)}
-              className={`px-4 py-1.5 rounded-full font-sans text-sm font-semibold transition-all duration-200 ${
+              className={`px-4 py-1.5 rounded-full font-serif text-sm sm:text-base font-bold transition-all duration-200 ${
                 activeTag === tag
-                  ? "bg-black text-white"
+                  ? "bg-[#1A1916] text-[#FAF9F6]"
                   : "bg-black/5 text-black/60 hover:bg-black/10"
               }`}
             >

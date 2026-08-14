@@ -130,7 +130,7 @@ export default function FontsPage() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full font-sans text-xs sm:text-sm font-semibold transition-all duration-200 ${
+              className={`px-4 py-2 rounded-full font-serif text-sm sm:text-base font-bold transition-all duration-200 ${
                 activeCategory === cat
                   ? "bg-[#1A1916] text-[#FAF9F6] shadow-sm"
                   : "bg-black/[0.05] text-black/60 hover:bg-black/10"

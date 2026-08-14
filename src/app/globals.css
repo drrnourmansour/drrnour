@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap');
+
 /* ── Arsenica Arabic Antiqua Local Font Family ── */
 @font-face {
   font-family: 'Arsenica';
@@ -64,7 +66,7 @@
   --font-arabic-calligraphy: 'Arsenica', serif;
   --font-arabic-body: 'Arsenica', serif;
   --font-serif: 'Arsenica', serif;
-  --font-latin: 'Bricolage Grotesque', sans-serif;
+  --font-latin: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
 }
 
 html {

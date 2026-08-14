@@ -18,10 +18,10 @@ const config: Config = {
       },
       fontFamily: {
         display: ["'Arsenica'", "serif"],
-        arabic: ["'Arsenica'", "sans-serif"],
+        arabic: ["'Arsenica'", "serif"],
         serif: ["'Arsenica'", "serif"],
-        sans: ["'Arsenica'", "var(--font-latin)", "sans-serif"],
-        latin: ["var(--font-bricolage)", "sans-serif"],
+        sans: ["'Bricolage Grotesque'", "system-ui", "-apple-system", "sans-serif"],
+        latin: ["'Bricolage Grotesque'", "system-ui", "-apple-system", "sans-serif"],
       },
     },
   },
