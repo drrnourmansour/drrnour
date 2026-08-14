@@ -21,20 +21,14 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 sm:px-12 py-5 sm:py-7 flex items-center justify-between bg-transparent transition-colors duration-400">
-        {/* Right: Signature Calligraphic Logo Mark 'نور' */}
+      <nav className="fixed top-0 left-0 right-0 z-50 px-5 sm:px-8 py-3 sm:py-4 flex items-center justify-between bg-transparent transition-colors duration-400">
+        {/* Right: Brand Logo */}
         <button
           onClick={() => navigateTo("/")}
-          style={{
-            fontFamily: "'Aref Ruqaa', 'Amiri', serif",
-            fontWeight: 700,
-            WebkitTextStroke: "1.2px #000000",
-            paintOrder: "stroke fill",
-          }}
-          className="text-3xl sm:text-[2.5rem] leading-none tracking-[-0.03em] text-black transition-transform duration-300 hover:scale-105 inline-block select-none cursor-pointer"
+          className="hover:opacity-70 transition-opacity duration-200 inline-block select-none cursor-pointer"
           title="نور محمد"
         >
-          نور
+          <img src="/logo.png" alt="نور محمد" className="h-10 sm:h-14 w-auto object-contain" />
         </button>
 
         {/* Left: Navigation Links + Social Icons */}

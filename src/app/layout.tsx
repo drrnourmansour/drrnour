@@ -12,6 +12,11 @@ export const metadata: Metadata = {
     default: "نور محمد | مصمم وأخصائي خطوط عربية ولاتينية",
     template: "%s | نور محمد",
   },
+  icons: {
+    icon: "/favicon.jpeg",
+    shortcut: "/favicon.jpeg",
+    apple: "/favicon.jpeg",
+  },
   description:
     "موقع ومسبك نور محمد المتخصص في تصميم ونحت الخطوط العربية واللاتينية المعاصرة والخطوط المتغيرة والهندسة الطباعية الرقمية.",
   keywords: [
