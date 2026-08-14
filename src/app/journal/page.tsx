@@ -80,7 +80,7 @@ export default function JournalPage() {
         <div className="text-right">
           <h1
             className="font-serif text-5xl sm:text-7xl font-extrabold text-black leading-none mb-3"
-            style={{ fontFamily: "'Amiri', serif" }}
+            style={{ fontFamily: "'Arsenica', serif" }}
           >
             المُدَوَّنَة
           </h1>
@@ -138,7 +138,7 @@ export default function JournalPage() {
               </div>
               <h2
                 className="font-serif text-3xl sm:text-5xl font-extrabold text-black leading-tight mb-4 group-hover:text-black/70 transition-colors"
-                style={{ fontFamily: "'Amiri', serif" }}
+                style={{ fontFamily: "'Arsenica', serif" }}
               >
                 {featured.title}
               </h2>
@@ -198,7 +198,7 @@ export default function JournalPage() {
                   </div>
                   <h2
                     className="font-serif text-2xl sm:text-3xl font-bold text-black group-hover:text-black/55 transition-colors leading-tight"
-                    style={{ fontFamily: "'Amiri', serif" }}
+                    style={{ fontFamily: "'Arsenica', serif" }}
                   >
                     {art.title}
                   </h2>

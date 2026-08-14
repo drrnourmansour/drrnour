@@ -103,7 +103,7 @@ export default function Footer() {
                 >
                   <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[26px]">
                     <span
-                      style={{ fontFamily: "'Readex Pro', 'Cairo', sans-serif" }}
+                      style={{ fontFamily: "'Arsenica', serif" }}
                       className="block text-sm font-medium h-[26px] leading-[26px] text-black text-center"
                     >
                       {link.nameAr}

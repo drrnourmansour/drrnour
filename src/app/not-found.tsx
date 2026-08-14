@@ -11,7 +11,7 @@ export default function NotFound() {
       {/* Large decorative 404 */}
       <div
         className="text-[clamp(8rem,25vw,20rem)] font-extrabold leading-none select-none text-black/[0.05] mb-2"
-        style={{ fontFamily: "'Aref Ruqaa', 'Amiri', serif" }}
+        style={{ fontFamily: "'Arsenica', serif" }}
         aria-hidden
       >
         ٤٠٤
@@ -28,7 +28,7 @@ export default function NotFound() {
         </p>
         <h1
           className="font-serif text-3xl sm:text-5xl font-extrabold text-black mb-4 leading-tight"
-          style={{ fontFamily: "'Amiri', serif" }}
+          style={{ fontFamily: "'Arsenica', serif" }}
         >
           الصفحة غير موجودة
         </h1>

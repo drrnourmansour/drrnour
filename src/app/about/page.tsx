@@ -56,7 +56,7 @@ export default function AboutPage() {
         {/* Decorative large monogram */}
         <div
           className="text-[120px] sm:text-[220px] font-extrabold leading-none select-none text-black/[0.04] absolute right-4 sm:right-12 top-16 pointer-events-none"
-          style={{ fontFamily: "'Aref Ruqaa', 'Amiri', serif" }}
+          style={{ fontFamily: "'Arsenica', serif" }}
           aria-hidden
         >
           نور
@@ -76,7 +76,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.05 }}
           className="font-serif text-4xl sm:text-7xl font-extrabold mb-6 leading-tight"
-          style={{ fontFamily: "'Amiri', serif" }}
+          style={{ fontFamily: "'Arsenica', serif" }}
         >
           نور محمد
         </motion.h1>
@@ -115,7 +115,7 @@ export default function AboutPage() {
             >
               <div
                 className="text-4xl sm:text-5xl font-extrabold text-black mb-1"
-                style={{ fontFamily: "'Aref Ruqaa', serif" }}
+                style={{ fontFamily: "'Arsenica', serif" }}
               >
                 {s.value}
               </div>
@@ -175,7 +175,7 @@ export default function AboutPage() {
             >
               <div
                 className="text-5xl sm:text-6xl font-extrabold text-black/08 shrink-0 leading-none"
-                style={{ fontFamily: "'Aref Ruqaa', serif" }}
+                style={{ fontFamily: "'Arsenica', serif" }}
               >
                 {step.n}
               </div>

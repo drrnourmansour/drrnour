@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -18,8 +17,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-amiri)", "Aref Ruqaa", "serif"],
-        arabic: ["var(--font-readex)", "Cairo", "sans-serif"],
+        display: ["'Arsenica'", "serif"],
+        arabic: ["'Arsenica'", "sans-serif"],
+        serif: ["'Arsenica'", "serif"],
+        sans: ["'Arsenica'", "var(--font-latin)", "sans-serif"],
         latin: ["var(--font-bricolage)", "sans-serif"],
       },
     },

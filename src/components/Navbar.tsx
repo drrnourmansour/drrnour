@@ -46,7 +46,7 @@ export default function Navbar() {
                     >
                       <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[28px]">
                         <span
-                          style={{ fontFamily: "'Readex Pro', 'Cairo', sans-serif" }}
+                          style={{ fontFamily: "'Arsenica', serif" }}
                           className={`block text-[1.1rem] h-[28px] leading-[28px] text-black text-center transition-colors ${
                             isActive ? "font-bold border-b-[2px] border-black opacity-100" : "font-medium opacity-85"
                           }`}
@@ -143,7 +143,7 @@ export default function Navbar() {
                   >
                     {/* Arabic — right side (first child in RTL flex) */}
                     <span
-                      style={{ fontFamily: "'Amiri', 'Aref Ruqaa', serif" }}
+                      style={{ fontFamily: "'Arsenica', serif" }}
                       className={`text-4xl font-bold text-black transition-colors ${
                         isActive ? "text-black border-b-2 border-black" : ""
                       }`}

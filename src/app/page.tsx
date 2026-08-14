@@ -40,7 +40,7 @@ export default function Home() {
             onClick={() => navigateTo(item.href)}
           >
             <span
-              style={{ fontFamily: "'Amiri', 'Aref Ruqaa', serif", fontWeight: 700 }}
+              style={{ fontFamily: "'Arsenica', serif", fontWeight: 700 }}
               className="text-[clamp(2.4rem,5vw,3.5rem)] font-bold leading-tight text-ink block transition-colors"
             >
               {item.title}

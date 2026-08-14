@@ -61,7 +61,7 @@ export default function ArticleClient({ article }: ArticleProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="font-serif text-3xl sm:text-5xl font-extrabold text-black leading-tight"
-          style={{ fontFamily: "'Amiri', serif" }}
+          style={{ fontFamily: "'Arsenica', serif" }}
         >
           {article.title}
         </motion.h1>
@@ -77,7 +77,7 @@ export default function ArticleClient({ article }: ArticleProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay: i * 0.07 }}
             className="font-sans text-lg sm:text-xl text-black/75 leading-loose mb-8"
-            style={{ fontFamily: "'Amiri', 'Georgia', serif" }}
+            style={{ fontFamily: "'Arsenica', serif" }}
           >
             {para}
           </motion.p>
