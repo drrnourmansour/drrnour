@@ -25,7 +25,7 @@ export default function Navbar() {
         {/* Right: Brand Logo */}
         <button
           onClick={() => navigateTo("/")}
-          className="hover:opacity-70 transition-opacity duration-200 inline-block select-none cursor-pointer"
+          className="opacity-100 hover:opacity-60 transition-opacity duration-200 inline-block select-none cursor-pointer"
           title="نور محمد"
         >
           <img src="/logo.png" alt="نور محمد" className="h-10 sm:h-14 w-auto object-contain" />
