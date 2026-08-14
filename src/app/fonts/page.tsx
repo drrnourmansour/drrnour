@@ -124,51 +124,52 @@ export default function FontsPage() {
           {activeCategory !== "الكل" && ` في فئة "${activeCategory}"`}
         </p>
 
-        {/* Category Filter Pills */}
-        <div className="flex items-center gap-2 flex-wrap justify-center mb-6 sm:mb-8">
+        {/* Unified Controls Bar (Category Filter Pills + View Switcher in one line) */}
+        <div className="flex items-center justify-center gap-2 sm:gap-3 flex-wrap mb-8 sm:mb-12">
           {allCategories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-1.5 rounded-full font-sans text-sm font-semibold transition-all duration-200 ${
+              className={`px-4 py-2 rounded-full font-sans text-xs sm:text-sm font-semibold transition-all duration-200 ${
                 activeCategory === cat
-                  ? "bg-black text-white"
-                  : "bg-black/6 text-black/60 hover:bg-black/10"
+                  ? "bg-[#1A1916] text-[#FAF9F6] shadow-sm"
+                  : "bg-black/[0.05] text-black/60 hover:bg-black/10"
               }`}
             >
               {cat}
             </button>
           ))}
-        </div>
 
-        {/* Sliding Knob View Switcher Pill */}
-        <div className="flex justify-center mb-8 sm:mb-10">
+          {/* Subtle Vertical Divider */}
+          <div className="hidden xs:block w-px h-6 bg-black/15 mx-1" />
+
+          {/* Sliding Knob View Switcher Pill */}
           <div
             dir="ltr"
             className="bg-black/[0.07] rounded-full p-1 inline-flex items-center relative gap-1 shadow-inner select-none"
           >
             <motion.div
-              className="absolute top-1 left-1 w-10 h-10 rounded-full bg-black z-10 shadow-md"
-              animate={{ x: isListView ? 0 : 44 }}
+              className="absolute top-1 left-1 w-8 h-8 rounded-full bg-[#1A1916] z-10 shadow-md"
+              animate={{ x: isListView ? 0 : 36 }}
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
             />
             <button
               onClick={() => setIsListView(true)}
-              className={`w-10 h-10 rounded-full flex items-center justify-center z-20 transition-colors duration-200 ${
-                isListView ? "text-white" : "text-black/80"
+              className={`w-8 h-8 rounded-full flex items-center justify-center z-20 transition-colors duration-200 ${
+                isListView ? "text-[#FAF9F6]" : "text-black/70"
               }`}
               title="عرض قائمة List View"
             >
-              <Menu className="w-5 h-5 stroke-[2]" />
+              <Menu className="w-4 h-4 stroke-[2]" />
             </button>
             <button
               onClick={() => setIsListView(false)}
-              className={`w-10 h-10 rounded-full flex items-center justify-center z-20 transition-colors duration-200 ${
-                !isListView ? "text-white" : "text-black/80"
+              className={`w-8 h-8 rounded-full flex items-center justify-center z-20 transition-colors duration-200 ${
+                !isListView ? "text-[#FAF9F6]" : "text-black/70"
               }`}
               title="عرض شبكي Grid View"
             >
-              <LayoutGrid className="w-5 h-5 stroke-[2]" />
+              <LayoutGrid className="w-4 h-4 stroke-[2]" />
             </button>
           </div>
         </div>
