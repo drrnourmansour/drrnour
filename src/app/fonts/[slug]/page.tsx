@@ -22,7 +22,7 @@ const fontData: Record<string, FontDetail> = {
     stylesAr: "٣ أنماط",
     stylesEn: "3 Styles",
     description: "خطٌّ يدويٌّ عربيٌّ يعكس العفوية والحركيّة الخطّيّة بنكهة الشَّخابيط المعاصرة.",
-    bgClass: "bg-[#FCD34D]",
+    bgClass: "bg-[#E8C87A]",
     fontFamily: "'Aref Ruqaa', serif",
     weights: [
       { nameAr: "عادي", nameEn: "Regular", weight: 400 },
@@ -37,7 +37,7 @@ const fontData: Record<string, FontDetail> = {
     stylesAr: "٦ أنماط، متغير",
     stylesEn: "6 Styles, Variable",
     description: "عائلة طباعية هندسية مرنة ثنائية اللغة صُممت للمجلات والهويات البصرية المعاصرة.",
-    bgClass: "bg-[#D6CECE]",
+    bgClass: "bg-[#D4C5B8]",
     fontFamily: "'Cairo', sans-serif",
     weights: [
       { nameAr: "خفيف", nameEn: "Light", weight: 300 },
@@ -55,7 +55,7 @@ const fontData: Record<string, FontDetail> = {
     stylesAr: "٦ أنماط، متغير",
     stylesEn: "6 Styles, Variable",
     description: "الخط التوقيعي للمصمم نور محمد؛ يستند إلى التراث الكوفي بأسلوب حديث ورشيق.",
-    bgClass: "bg-[#6EE7B7]",
+    bgClass: "bg-[#96B5A4]",
     fontFamily: "'Reem Kufi', sans-serif",
     weights: [
       { nameAr: "عادي", nameEn: "Regular", weight: 400 },
@@ -71,7 +71,7 @@ const fontData: Record<string, FontDetail> = {
     stylesAr: "٧ أنماط، متغير",
     stylesEn: "7 Styles, Variable",
     description: "خط عربي ذكي متعدد الأوزان مناسب للنصوص الطويلة والشاشات الرقمية العالية الدقة.",
-    bgClass: "bg-[#FCA5A5]",
+    bgClass: "bg-[#D4907A]",
     fontFamily: "'Tajawal', sans-serif",
     weights: [
       { nameAr: "رفيع", nameEn: "Thin", weight: 300 },
@@ -88,7 +88,7 @@ const fontData: Record<string, FontDetail> = {
     stylesAr: "٨ أنماط",
     stylesEn: "8 Styles",
     description: "خط تعبيري قوي صُمم خصيصاً للشعارات وحملات الإعلانات ثنائية اللغة.",
-    bgClass: "bg-[#D4FF00]",
+    bgClass: "bg-[#C8BF8A]",
     fontFamily: "'Readex Pro', sans-serif",
     weights: [
       { nameAr: "خفيف", nameEn: "Light", weight: 300 },
@@ -104,7 +104,7 @@ const fontData: Record<string, FontDetail> = {
     stylesAr: "٤ أنماط",
     stylesEn: "4 Styles",
     description: "قراءة معاصرة لقواعد خط النسخ العربي الشريف مخصص للكتب والمنشورات الثقافية.",
-    bgClass: "bg-[#E9D5FF]",
+    bgClass: "bg-[#C9BECC]",
     fontFamily: "'Amiri', serif",
     weights: [
       { nameAr: "عادي", nameEn: "Regular", weight: 400 },

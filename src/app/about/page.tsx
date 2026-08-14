@@ -49,7 +49,7 @@ const fadeUp = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen pt-28 sm:pt-36 pb-24 px-4 sm:px-12 max-w-[1100px] mx-auto text-black">
+    <main className="min-h-screen pt-28 sm:pt-36 pb-24 px-4 sm:px-12 max-w-[1100px] mx-auto text-ink">
 
       {/* ── Hero Header ── */}
       <section className="mb-16 sm:mb-24 text-right">
@@ -111,7 +111,7 @@ export default function AboutPage() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="bg-white px-6 sm:px-10 py-8 sm:py-10 text-right"
+              className="bg-offwhite px-6 sm:px-10 py-8 sm:py-10 text-right"
             >
               <div
                 className="text-4xl sm:text-5xl font-extrabold text-black mb-1"
@@ -141,7 +141,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               whileHover={{ y: -4 }}
               transition={{ type: "spring", stiffness: 300, damping: 22 }}
-              className="border border-black/10 rounded-3xl p-7 sm:p-9 bg-[#FAFAFA] hover:bg-white hover:shadow-lg transition-all duration-300 text-right"
+              className="border border-black/8 rounded-3xl p-7 sm:p-9 bg-offwhite hover:bg-[#F0EDE8] hover:shadow-md transition-all duration-300 text-right"
             >
               <div className="text-3xl mb-4 text-black/30">{svc.icon}</div>
               <h3 className="font-serif text-xl sm:text-2xl font-bold mb-1 text-black">{svc.titleAr}</h3>
@@ -189,10 +189,10 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-black text-white rounded-[32px] sm:rounded-[40px] p-8 sm:p-14 flex flex-col sm:flex-row items-center justify-between gap-8">
+      <section className="bg-[#1A1916] rounded-[32px] sm:rounded-[40px] p-8 sm:p-14 flex flex-col sm:flex-row items-center justify-between gap-8">
         <div className="text-right sm:text-right">
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold mb-2">هل لديك مشروع خط مخصص؟</h2>
-          <p className="font-sans text-sm text-white/70 max-w-sm">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold mb-2 text-[#FAF9F6]">هل لديك مشروع خط مخصص؟</h2>
+          <p className="font-sans text-sm text-[#FAF9F6]/60 max-w-sm">
             تواصل معي لبدء مناقشة تفاصيل المشروع ورسم الهوية الطباعية المناسبة.
           </p>
         </div>
@@ -201,18 +201,19 @@ export default function AboutPage() {
             href="https://instagram.com/drrnour"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white text-black font-sans text-sm font-extrabold px-6 py-3 rounded-full hover:bg-[#FFE500] transition-colors flex items-center gap-2"
+            className="bg-[#FAF9F6] text-[#1A1916] font-sans text-sm font-extrabold px-6 py-3 rounded-full hover:bg-[#FFE500] transition-colors flex items-center gap-2"
           >
             <Instagram className="w-4 h-4" /> @drrnour
           </a>
           <a
             href="mailto:nourmohamedanwar@gmail.com"
-            className="border border-white/30 text-white font-sans text-sm font-bold px-6 py-3 rounded-full hover:bg-white/10 transition-colors flex items-center gap-2"
+            className="border border-[#FAF9F6]/30 text-[#FAF9F6] font-sans text-sm font-bold px-6 py-3 rounded-full hover:bg-[#FAF9F6]/10 transition-colors flex items-center gap-2"
           >
             <Mail className="w-4 h-4" /> راسلني
           </a>
         </div>
       </section>
+
     </main>
   );
 }

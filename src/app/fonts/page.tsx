@@ -20,7 +20,7 @@ const fontsList: FontItem[] = [
     id: "talheen",
     title: "تَلْحِين",
     fontFamily: "'Aref Ruqaa', serif",
-    bgClass: "bg-[#FCD34D]",
+    bgClass: "bg-[#E8C87A]",
     stylesAr: "٣ أنماط",
     stylesEn: "3 styles",
     category: "يدوي",
@@ -29,7 +29,7 @@ const fontsList: FontItem[] = [
     id: "waraqa",
     title: "وَرَقَة",
     fontFamily: "'Cairo', sans-serif",
-    bgClass: "bg-[#D6CECE]",
+    bgClass: "bg-[#D4C5B8]",
     stylesAr: "٦ أنماط، متغير",
     stylesEn: "6 styles, Variable",
     category: "هندسي",
@@ -38,7 +38,7 @@ const fontsList: FontItem[] = [
     id: "khatt-nour",
     title: "خَط نُور",
     fontFamily: "'Reem Kufi', sans-serif",
-    bgClass: "bg-[#6EE7B7]",
+    bgClass: "bg-[#96B5A4]",
     stylesAr: "٦ أنماط، متغير",
     stylesEn: "6 styles, Variable",
     category: "كوفي",
@@ -47,7 +47,7 @@ const fontsList: FontItem[] = [
     id: "majd",
     title: "مَجْد",
     fontFamily: "'Tajawal', sans-serif",
-    bgClass: "bg-[#FCA5A5]",
+    bgClass: "bg-[#D4907A]",
     stylesAr: "٧ أنماط، متغير",
     stylesEn: "7 styles, Variable",
     category: "هندسي",
@@ -56,7 +56,7 @@ const fontsList: FontItem[] = [
     id: "rawaa",
     title: "رَوْعَة",
     fontFamily: "'Readex Pro', sans-serif",
-    bgClass: "bg-[#D4FF00]",
+    bgClass: "bg-[#C8BF8A]",
     stylesAr: "٨ أنماط",
     stylesEn: "8 styles",
     category: "يدوي",
@@ -65,7 +65,7 @@ const fontsList: FontItem[] = [
     id: "naskh-modern",
     title: "نَسْخ",
     fontFamily: "'Amiri', serif",
-    bgClass: "bg-[#E9D5FF]",
+    bgClass: "bg-[#C9BECC]",
     stylesAr: "٤ أنماط",
     stylesEn: "4 styles",
     category: "نسخي",
@@ -75,15 +75,15 @@ const fontsList: FontItem[] = [
 const allCategories = ["الكل", "يدوي", "هندسي", "كوفي", "نسخي"];
 
 const shapes = [
-  { text: "و", bg: "#FDE68A", shape: "rounded-full w-14 sm:w-20 h-14 sm:h-20" },
-  { text: "~", bg: "#A7F3D0", shape: "rounded-[30px] sm:rounded-[45px] px-4 sm:px-7 h-14 sm:h-20" },
-  { text: "✦", bg: "#C084FC", shape: "rounded-[16px] sm:rounded-[20px] w-14 sm:w-20 h-14 sm:h-20" },
-  { text: "۶", bg: "#FCD34D", shape: "rounded-full w-14 sm:w-20 h-14 sm:h-20" },
-  { text: "ن", bg: "#BEF264", shape: "rounded-[28px] sm:rounded-[40px] px-5 sm:px-8 h-14 sm:h-20" },
-  { text: "س", bg: "#DDD6FE", shape: "rounded-[24px] sm:rounded-[35px] px-4 sm:px-7 h-14 sm:h-20" },
-  { text: "٨", bg: "#F87171", shape: "rounded-[18px] sm:rounded-[24px] px-4 sm:px-6 h-14 sm:h-20" },
-  { text: "ع", bg: "#6EE7B7", shape: "rounded-full w-14 sm:w-20 h-14 sm:h-20" },
-  { text: "ر", bg: "#FBCFE8", shape: "rounded-[30px] sm:rounded-[45px] px-5 sm:px-8 h-14 sm:h-20" },
+  { text: "و", bg: "#E8C87A", shape: "rounded-full w-14 sm:w-20 h-14 sm:h-20" },
+  { text: "~", bg: "#96B5A4", shape: "rounded-[30px] sm:rounded-[45px] px-4 sm:px-7 h-14 sm:h-20" },
+  { text: "✦", bg: "#C9BECC", shape: "rounded-[16px] sm:rounded-[20px] w-14 sm:w-20 h-14 sm:h-20" },
+  { text: "۶", bg: "#D4C5B8", shape: "rounded-full w-14 sm:w-20 h-14 sm:h-20" },
+  { text: "ن", bg: "#C8BF8A", shape: "rounded-[28px] sm:rounded-[40px] px-5 sm:px-8 h-14 sm:h-20" },
+  { text: "س", bg: "#C9BECC", shape: "rounded-[24px] sm:rounded-[35px] px-4 sm:px-7 h-14 sm:h-20" },
+  { text: "٨", bg: "#D4907A", shape: "rounded-[18px] sm:rounded-[24px] px-4 sm:px-6 h-14 sm:h-20" },
+  { text: "ع", bg: "#96B5A4", shape: "rounded-full w-14 sm:w-20 h-14 sm:h-20" },
+  { text: "ر", bg: "#D4B8B0", shape: "rounded-[30px] sm:rounded-[45px] px-5 sm:px-8 h-14 sm:h-20" },
 ];
 
 export default function FontsPage() {
@@ -145,7 +145,7 @@ export default function FontsPage() {
         <div className="flex justify-center mb-8 sm:mb-10">
           <div
             dir="ltr"
-            className="bg-[#EFEFEF] rounded-full p-1 inline-flex items-center relative gap-1 shadow-inner select-none"
+            className="bg-black/[0.07] rounded-full p-1 inline-flex items-center relative gap-1 shadow-inner select-none"
           >
             <motion.div
               className="absolute top-1 left-1 w-10 h-10 rounded-full bg-black z-10 shadow-md"

@@ -14,7 +14,7 @@ const articles = [
     tag: "نظريّة",
     readTime: "٧ دقائق",
     featured: true,
-    bgAccent: "#FCD34D",
+    bgAccent: "#E8C87A",
   },
   {
     id: "talheen-story",
@@ -25,7 +25,7 @@ const articles = [
     tag: "خطوط",
     readTime: "١٢ دقيقة",
     featured: false,
-    bgAccent: "#A7F3D0",
+    bgAccent: "#96B5A4",
   },
   {
     id: "variable-fonts",
@@ -36,7 +36,7 @@ const articles = [
     tag: "تقنية",
     readTime: "٩ دقائق",
     featured: false,
-    bgAccent: "#DDD6FE",
+    bgAccent: "#C9BECC",
   },
   {
     id: "bilingual-harmony",
@@ -47,7 +47,7 @@ const articles = [
     tag: "نظريّة",
     readTime: "١٠ دقائق",
     featured: false,
-    bgAccent: "#FBCFE8",
+    bgAccent: "#D4907A",
   },
   {
     id: "kufi-revival",
@@ -58,7 +58,7 @@ const articles = [
     tag: "تاريخ",
     readTime: "٨ دقائق",
     featured: false,
-    bgAccent: "#FDE68A",
+    bgAccent: "#C8BF8A",
   },
 ];
 
@@ -124,7 +124,7 @@ export default function JournalPage() {
               className="h-2 w-full"
               style={{ backgroundColor: featured.bgAccent }}
             />
-            <div className="p-8 sm:p-14 text-right bg-white">
+            <div className="p-8 sm:p-14 text-right bg-offwhite">
               <div className="flex items-center justify-between mb-6">
                 <span className="font-sans text-xs font-bold tracking-widest text-black/40 uppercase">
                   {featured.readTime} قراءة

@@ -9,11 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        offwhite: "#FAF9F6",
+        ink: "#1A1916",
         brand: {
-          lime: "#C9FA3C",
-          yellow: "#FFE500",
-          pink: "#FF85B3",
-          blue: "#40E0D0",
+          gold: "#E8C87A",
+          sage: "#9BAF8A",
+          terra: "#C4735A",
         },
       },
       fontFamily: {

@@ -22,7 +22,7 @@ export default function Preloader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.05 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-[99999] bg-white flex flex-col items-center justify-center w-full h-full select-none"
+          className="fixed inset-0 z-[99999] bg-offwhite flex flex-col items-center justify-center w-full h-full select-none"
         >
           {/* Ambient Soft Radial Glow Aura */}
           <motion.div

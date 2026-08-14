@@ -1,17 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useTransitionNav } from "@/components/TransitionProvider";
 
 export default function Home() {
-  const [bgColor, setBgColor] = useState<string>("#FFFFFF");
+  const [bgColor, setBgColor] = useState<string>("#FAF9F6");
   const { navigateTo } = useTransitionNav();
+  const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleMouseEnter = (color: string) => {
+    if (resetTimer.current) clearTimeout(resetTimer.current);
+    setBgColor(color);
+  };
+
+  const handleMouseLeave = () => {
+    resetTimer.current = setTimeout(() => setBgColor("#FAF9F6"), 180);
+  };
 
   const menuItems = [
-    { title: "خطوط", subtitle: "Fonts", href: "/fonts", color: "#C9FA3C" },
-    { title: "المدوَّنة", subtitle: "Journal", href: "/journal", color: "#FFE500" },
-    { title: "عنّي", subtitle: "About", href: "/about", color: "#40E0D0" },
+    { title: "خطوط", subtitle: "Fonts", href: "/fonts", color: "#E8C87A" },
+    { title: "المدوَّنة", subtitle: "Journal", href: "/journal", color: "#9BAF8A" },
+    { title: "عنّي", subtitle: "About", href: "/about", color: "#C4735A" },
   ];
 
   return (
@@ -24,19 +34,20 @@ export default function Home() {
         {menuItems.map((item) => (
           <motion.div
             key={item.href}
-            onMouseEnter={() => setBgColor(item.color)}
+          onMouseEnter={() => handleMouseEnter(item.color)}
+            onMouseLeave={handleMouseLeave}
             className="flex flex-col items-center justify-center cursor-pointer group select-none"
             onClick={() => navigateTo(item.href)}
           >
             <span
               style={{ fontFamily: "'Amiri', 'Aref Ruqaa', serif", fontWeight: 700 }}
-              className="text-[clamp(2.4rem,5vw,3.5rem)] font-bold leading-tight text-black block transition-colors"
+              className="text-[clamp(2.4rem,5vw,3.5rem)] font-bold leading-tight text-ink block transition-colors"
             >
               {item.title}
             </span>
             <span
               style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
-              className="text-sm sm:text-base font-medium text-black/70 tracking-normal block mt-1 transition-all duration-200 group-hover:font-bold group-hover:text-black group-hover:tracking-wider"
+              className="text-sm sm:text-base font-medium text-[#1A1916]/60 tracking-normal block mt-1 transition-all duration-200 group-hover:font-bold group-hover:text-[#1A1916] group-hover:tracking-wider"
             >
               {item.subtitle}
             </span>

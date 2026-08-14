@@ -126,7 +126,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed inset-0 z-40 bg-white flex flex-col justify-between px-8 pt-28 pb-12 md:hidden"
+            className="fixed inset-0 z-40 bg-offwhite flex flex-col justify-between px-8 pt-28 pb-12 md:hidden"
           >
             {/* Nav Links Stack */}
             <div className="flex flex-col gap-6 text-right">
