@@ -107,6 +107,10 @@ body {
   transition: background-color 0.4s ease;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 /* Hide scrollbar on shapes banner & horizontal scroll areas */
 .no-scrollbar {
   -ms-overflow-style: none;   /* IE & Edge */
@@ -147,21 +151,27 @@ body {
   scrollbar-color: rgba(26, 25, 22, 0.22) transparent;
 }
 
-/* ── Banner tile fluid sizing ── */
-/* sm tiles: 36px mobile → 56px desktop */
+/* ── Banner tile fluid sizing ──
+   Calculated to always fit 8 main-row tiles on 320px+ screens:
+   8 × tile + 7 × gap ≤ viewport
+   At 320px → each tile ≤ (320 - 8px padding - 7×4px gap) / 8 ≈ 33px
+   Using vw-based clamp so they grow proportionally.
+── */
+
+/* sm tiles: 28px (320px screen) → 56px (desktop) */
 .banner-sm {
-  width:  clamp(36px, 9vw, 56px);
-  height: clamp(36px, 9vw, 56px);
+  width:  clamp(28px, 8.5vw, 56px);
+  height: clamp(28px, 8.5vw, 56px);
 }
 
-/* md tiles: rectangle — clamp width/height separately */
+/* md tiles: pill shape — wider than tall */
 .banner-md {
-  width:  clamp(56px, 13vw, 128px);
-  height: clamp(52px, 10vw, 96px);
+  width:  clamp(44px, 11.5vw, 128px);
+  height: clamp(40px, 9vw, 96px);
 }
 
-/* lg tiles: 52px mobile → 128px desktop */
+/* lg tiles: 32px (320px screen) → 128px (desktop) */
 .banner-lg {
-  width:  clamp(52px, 12.5vw, 128px);
-  height: clamp(52px, 12.5vw, 128px);
+  width:  clamp(32px, 11vw, 128px);
+  height: clamp(32px, 11vw, 128px);
 }
