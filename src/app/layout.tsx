@@ -144,6 +144,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Google Fonts — font card specimens */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&family=Cairo:wght@400;700;900&family=Reem+Kufi:wght@400;700&family=Tajawal:wght@400;700;900&family=Readex+Pro:wght@300;400;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="bg-offwhite text-ink font-sans antialiased selection:bg-ink selection:text-offwhite flex flex-col min-h-screen">
         <TransitionProvider>

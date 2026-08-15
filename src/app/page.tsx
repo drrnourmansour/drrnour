@@ -1,22 +1,12 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTransitionNav } from "@/components/TransitionProvider";
 
 export default function Home() {
   const [bgColor, setBgColor] = useState<string>("#FAF9F6");
   const { navigateTo } = useTransitionNav();
-  const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const handleMouseEnter = (color: string) => {
-    if (resetTimer.current) clearTimeout(resetTimer.current);
-    setBgColor(color);
-  };
-
-  const handleMouseLeave = () => {
-    resetTimer.current = setTimeout(() => setBgColor("#FAF9F6"), 180);
-  };
 
   const menuItems = [
     { title: "خطوط", subtitle: "Fonts", href: "/fonts", color: "#E8C87A" },
@@ -34,8 +24,7 @@ export default function Home() {
         {menuItems.map((item) => (
           <motion.div
             key={item.href}
-          onMouseEnter={() => handleMouseEnter(item.color)}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => setBgColor(item.color)}
             className="flex flex-col items-center justify-center cursor-pointer group select-none"
             onClick={() => navigateTo(item.href)}
           >

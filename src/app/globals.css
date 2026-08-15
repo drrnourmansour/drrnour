@@ -147,3 +147,21 @@ body {
   scrollbar-color: rgba(26, 25, 22, 0.22) transparent;
 }
 
+/* ── Banner tile fluid sizing ── */
+/* sm tiles: 36px mobile → 56px desktop */
+.banner-sm {
+  width:  clamp(36px, 9vw, 56px);
+  height: clamp(36px, 9vw, 56px);
+}
+
+/* md tiles: rectangle — clamp width/height separately */
+.banner-md {
+  width:  clamp(56px, 13vw, 128px);
+  height: clamp(52px, 10vw, 96px);
+}
+
+/* lg tiles: 52px mobile → 128px desktop */
+.banner-lg {
+  width:  clamp(52px, 12.5vw, 128px);
+  height: clamp(52px, 12.5vw, 128px);
+}
