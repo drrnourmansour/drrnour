@@ -15,6 +15,7 @@ export default function Navbar() {
 
   const navLinks = [
     { nameAr: "خطوط", nameEn: "Fonts", href: "/fonts" },
+    { nameAr: "فُرَش", nameEn: "Brushes", href: "/brushes" },
     { nameAr: "المدونة", nameEn: "Journal", href: "/journal" },
     { nameAr: "عنِّي", nameEn: "About", href: "/about" },
   ];

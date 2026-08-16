@@ -20,11 +20,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "kufi-revival",
   ];
 
+  const brushSlugs = [
+    "nour-signature",
+    "thuluth-reed",
+    "ruqah-sharp",
+    "tashkeel-master",
+  ];
+
   const fontUrls = fontSlugs.map((slug) => ({
     url: `${baseUrl}/fonts/${slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.9,
+  }));
+
+  const brushUrls = brushSlugs.map((slug) => ({
+    url: `${baseUrl}/brushes/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.88,
   }));
 
   const journalUrls = journalSlugs.map((slug) => ({
@@ -48,6 +62,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: `${baseUrl}/brushes`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.90,
+    },
+    {
       url: `${baseUrl}/journal`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
@@ -60,6 +80,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     ...fontUrls,
+    ...brushUrls,
     ...journalUrls,
   ];
 }
+

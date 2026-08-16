@@ -1,0 +1,232 @@
+export interface BrushDetailData {
+  id: string;
+  nameAr: string;
+  nameEn: string;
+  category: string;
+  stylesAr: string;
+  stylesEn: string;
+  description: string;
+  bg: string;
+  textColor: "dark" | "light";
+  fileFormat: string;
+  fileSize?: string;
+  downloadUrl?: string;
+  downloadName?: string;
+  soon?: boolean;
+  angle: number;
+  minWidthRatio: number;
+  maxWidthRatio: number;
+  smoothing: number;
+  inkOpacity: number;
+  inkBleed?: boolean;
+  isNuqtaStamp?: boolean;
+  specimenAr: string;
+  specimenEn: string;
+  features: string[];
+  subBrushes?: { name: string; angle: string; desc: string }[];
+}
+
+export const brushDataMap: Record<string, BrushDetailData> = {
+  "nour-signature": {
+    id: "nour-signature",
+    nameAr: "فُرَش نُورِيَّة",
+    nameEn: "Nouriyya Brushes",
+    category: "الحزمة التوقيعية الشاملة",
+    stylesAr: "٦ فُرَش احترافية، شامل",
+    stylesEn: "6 Pro Brushes, Complete Pack",
+    description: "الحزمة التوقيعية المعتمدة للمصمم والخطاط نور محمد. تجمع كافة الأدوات الأساسية لقصبة الخط العربي الرقمي مع استجابة متقدمة للضغط والسرعة ومحاكاة ملمس الحبر الطبيعي.",
+    bg: "#E8C87A",
+    textColor: "dark",
+    fileFormat: ".gobrushes",
+    fileSize: "١.٩ ميجابايت",
+    downloadUrl: `/${encodeURIComponent("فرش نوريّة_202608161639_09880.gobrushes")}`,
+    downloadName: "فرش نوريّة_202608161639_09880.gobrushes",
+    angle: 68,
+    minWidthRatio: 0.18,
+    maxWidthRatio: 1.15,
+    smoothing: 0.85,
+    inkOpacity: 0.96,
+    specimenAr: "سَيْلُ الحِبْرِ يَرْوِي بَهْجَةَ الأَلْفَاظِ",
+    specimenEn: "The authentic flow of Arabic ink & digital reed",
+    features: [
+      "محاكاة قصبة الخط الطبيعية بزاوية قطّة ٦٨ درجة وانسيابية فائقة",
+      "حساسية استثنائية للضغط مع أقلام Apple Pencil والأجهزة اللوحية",
+      "استجابة ديناميكية للسرعة وتعديل آلي لسماكة الحروف",
+      "حزمة ملف .gobrushes مدمجة وخفيفة الوزن للاستيراد بضغطة واحدة",
+    ],
+    subBrushes: [
+      { name: "قلم الثلث والنسخ الرصين", angle: "٧٠°", desc: "للعناوين الكبرى والتركيبات الفخمة" },
+      { name: "ريشة الرقعة السريعة", angle: "٥٠°", desc: "للتواقيع والخطوط الحرة العفوية" },
+      { name: "قلم الكوفي المصمت", angle: "٩٠°", desc: "للشعارات والهندسة الطباعية المعاصرة" },
+      { name: "فرشاة الحبر الرطب المعتق", angle: "حر", desc: "للمخطوطات والملمس العضوي" },
+      { name: "قلم التشكيل وميزان النقط", angle: "٤٥°", desc: "للنقاط المعينية وحركات الإعراب" },
+    ],
+  },
+  "thuluth-reed": {
+    id: "thuluth-reed",
+    nameAr: "قَصَبَة الثُّلُث",
+    nameEn: "Thuluth Majestic Reed",
+    category: "محاكاة قصب كلاسيكي",
+    stylesAr: "٤ زوايا ميلان",
+    stylesEn: "4 Angle Styles",
+    description: "قلم ثلث جلي عريض بقطّة ٧٢ درجة مصمم لمحاكاة السحبات الرأسية العريضة والانتقالات الدقيقة نحو النهايات المستدقة والترويسات الكبرى.",
+    bg: "#D4C5B8",
+    textColor: "dark",
+    fileFormat: ".gobrushes",
+    fileSize: "١.٢ ميجابايت",
+    downloadUrl: `/${encodeURIComponent("فرش نوريّة_202608161639_09880.gobrushes")}`,
+    downloadName: "فرش نوريّة_202608161639_09880.gobrushes",
+    angle: 72,
+    minWidthRatio: 0.12,
+    maxWidthRatio: 1.25,
+    smoothing: 0.88,
+    inkOpacity: 0.98,
+    specimenAr: "ن وَالْقَلَمِ وَمَا يَسْطُرُونَ",
+    specimenEn: "By the pen and what they inscribe with precision",
+    features: [
+      "زاوية قطّة ٧٢ درجة تمنح أقصى تباين بين الرأس والأفقي",
+      "تدفق حبري متزن ومثالي للمدود والترويسات الكبيرة",
+      "تنعيم ذكي لمنع أي اهتزاز في السحبات الدائرية",
+      "جاهزة للتحميل الفوري ضمن الحزمة النورية",
+    ],
+  },
+  "ruqah-sharp": {
+    id: "ruqah-sharp",
+    nameAr: "حِبْرُ الرِّقْعَة",
+    nameEn: "Sharp Ruq'ah Ink",
+    category: "خط يدوي سريع",
+    stylesAr: "٣ أوزان سرعة",
+    stylesEn: "3 Speed Weights",
+    description: "حواف قاطعة وزوايا رقعة ٥٠ درجة تمنحك استجابة فورية وحادة لتدوين الأفكار والتواقيع والشعارات الحرة بحواف هندسية حاسمة.",
+    bg: "#D4907A",
+    textColor: "dark",
+    fileFormat: ".gobrushes",
+    fileSize: "٩٥٠ كيلوبايت",
+    downloadUrl: `/${encodeURIComponent("فرش نوريّة_202608161639_09880.gobrushes")}`,
+    downloadName: "فرش نوريّة_202608161639_09880.gobrushes",
+    angle: 50,
+    minWidthRatio: 0.22,
+    maxWidthRatio: 1.05,
+    smoothing: 0.75,
+    inkOpacity: 0.95,
+    specimenAr: "عَفْوِيَّةُ الحَرْفِ وَرَشَاقَةُ القَصَبَة",
+    specimenEn: "Spontaneous strokes, sharp terminals and swift ligatures",
+    features: [
+      "قطّة قلم حادة ٥٠ درجة مخصصة للكتابة السريعة",
+      "نهايات مستقيمة صريحة تحاكي أسلوب الرقعة العثماني والحديث",
+      "خفيفة واستجابتها فورية لحركات اليد السريعة",
+      "متوافقة مع تطبيقات الرسم والخط الرقمي",
+    ],
+  },
+  "tashkeel-master": {
+    id: "tashkeel-master",
+    nameAr: "تَشْكِيل وَتَزْيِين",
+    nameEn: "Tashkeel & Diacritics",
+    category: "أدوات ميزان ونقاط",
+    stylesAr: "١٢ نقطة وحركة",
+    stylesEn: "12 Nuqta Presets",
+    description: "أداة دقيقة مخصصة لرسم النقاط المعينية (ميزان الخطاط) وحركات التشكيل كالتنوين والفتحة والضمة والزخارف التكميلية بدقة متناهية.",
+    bg: "#96B5A4",
+    textColor: "dark",
+    fileFormat: ".gobrushes",
+    fileSize: "٨٢٠ كيلوبايت",
+    downloadUrl: `/${encodeURIComponent("فرش نوريّة_202608161639_09880.gobrushes")}`,
+    downloadName: "فرش نوريّة_202608161639_09880.gobrushes",
+    angle: 45,
+    minWidthRatio: 0.4,
+    maxWidthRatio: 0.8,
+    smoothing: 0.5,
+    inkOpacity: 0.95,
+    isNuqtaStamp: true,
+    specimenAr: "مِيزَانُ النِّقَاطِ وَحَرَكَاتُ الإِعْرَاب",
+    specimenEn: "Accurate nuqta scale, vocalization marks and ornaments",
+    features: [
+      "ختم معيني مباشر للنقاط بمجرد الضغط على الشاشة",
+      "أبعاد محسوبة وفق النسب الذهبية للخط العربي",
+      "مثالية لضبط أوزان الحروف وميزان النقط",
+      "تتضمن حركات التشكيل والزخارف التزيينية",
+    ],
+  },
+  "kufi-architect": {
+    id: "kufi-architect",
+    nameAr: "كُوفِي مِعْمَارِي",
+    nameEn: "Architectural Kufi",
+    category: "هندسة طباعية",
+    stylesAr: "٨ فُرَش شبكية",
+    stylesEn: "8 Grid Brushes",
+    description: "فُرَش مصمتة ذات زوايا قائمة ٩٠° و ٠° لتصميم الشعارات والتايبوغرافي الكوفي الحديث والهياكل المستقيمة.",
+    bg: "#3A3D8A",
+    textColor: "light",
+    fileFormat: ".gobrushes",
+    fileSize: "١.٤ ميجابايت",
+    angle: 90,
+    minWidthRatio: 0.85,
+    maxWidthRatio: 1.0,
+    smoothing: 0.9,
+    inkOpacity: 1.0,
+    soon: true,
+    specimenAr: "هَنْدَسَةُ البَيَانِ فِي نَسَقِ البُنْيَان",
+    specimenEn: "Geometric discipline and contemporary typographic structures",
+    features: [
+      "سماكة ثابتة بدون انحراف في الزوايا الرأسية",
+      "مثالية للتصميم المعماري وشبكات الكوفي المربع",
+      "زوايا قائمة حادة ٩٠ درجة",
+      "قريباً للتحميل المباشر",
+    ],
+  },
+  "vintage-ink": {
+    id: "vintage-ink",
+    nameAr: "أَحْبَارُ الدَّوَاة",
+    nameEn: "Vintage Dawāt Inks",
+    category: "حبر وتعتيق عضوي",
+    stylesAr: "٥ ملامس عضوية",
+    stylesEn: "5 Organic Textures",
+    description: "تأثيرات حبر الدواة الطبيعي والتعتيق العضوي على الورق اليدوي والمخطوطات التراثية مع تسرب لطيف للحبر.",
+    bg: "#C8BF8A",
+    textColor: "dark",
+    fileFormat: ".gobrushes",
+    fileSize: "٢.١ ميجابايت",
+    angle: 60,
+    minWidthRatio: 0.35,
+    maxWidthRatio: 1.2,
+    smoothing: 0.8,
+    inkOpacity: 0.82,
+    inkBleed: true,
+    soon: true,
+    specimenAr: "مَلْمَسُ الوَرَقِ القُطْنِيِّ وَأَثَرُ الزَّمَان",
+    specimenEn: "Cotton paper grain, ink bleed and manuscript shaders",
+    features: [
+      "ملمس حبري حيوي يحاكي الورق القطني المصنوع يدوياً",
+      "تسرب لطيف ومدروس لجزيئات الحبر عند الأطراف",
+      "إحساس المخطوطات القديمة وأحبار الزعفران والسناج",
+      "قريباً للتحميل",
+    ],
+  },
+  "diwani-royal": {
+    id: "diwani-royal",
+    nameAr: "دِيوَانِي سُلْطَانِي",
+    nameEn: "Sultani Diwani",
+    category: "خط ديواني مرن",
+    stylesAr: "٥ فُرَش مرنة",
+    stylesEn: "5 Flexible Brushes",
+    description: "انسيابية فائقة لخط الديواني الجلي مع مرونة استثنائية في الالتواءات والمدّات والروابط الدائرية المركبة.",
+    bg: "#1A1916",
+    textColor: "light",
+    fileFormat: ".gobrushes",
+    fileSize: "١.٧ ميجابايت",
+    angle: 45,
+    minWidthRatio: 0.15,
+    maxWidthRatio: 1.2,
+    smoothing: 0.92,
+    inkOpacity: 0.96,
+    soon: true,
+    specimenAr: "انْسِيَابِيَّةُ المَدَّاتِ وَتَرَابُطُ الحُرُوف",
+    specimenEn: "Flowing ascenders and complex intertwined calligraphic art",
+    features: [
+      "زاوية ٤٥ درجة تسمح بالدوران السلس في كافة الاتجاهات",
+      "تنعيم فائق مخصص للروابط المتداخلة والمدّات الطويلة",
+      "استجابة ممتازة للأقواس الكبرى وكؤوس الحروف",
+      "قريباً للتحميل",
+    ],
+  },
+};
