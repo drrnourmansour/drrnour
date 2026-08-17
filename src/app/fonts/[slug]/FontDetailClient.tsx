@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowRight, ShoppingBag, X, Check, Mail, Copy } from "lucide-react";
+import { ArrowRight, ShoppingBag, X, Check, Copy } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTransitionNav } from "@/components/TransitionProvider";
 
@@ -364,7 +364,7 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
                   href={mailtoUrl}
                   className="w-full bg-[#1A1916] text-[#FAF9F6] py-3.5 px-6 rounded-full font-bold font-sans text-sm sm:text-base flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-sm text-center"
                 >
-                  <Mail className="w-4 h-4" />
+                  <img src="/ICONS/Mail.png" alt="Email" className="w-4 h-4 object-contain invert brightness-200" />
                   <span>إرسال الطلب عبر البريد الإلكتروني</span>
                 </a>
 

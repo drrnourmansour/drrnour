@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Mail } from "lucide-react";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -87,10 +86,10 @@ export default function Footer() {
 
             <a
               href="mailto:nourmohamedanwar@gmail.com"
-              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-block"
+              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center"
               title="البريد الإلكتروني"
             >
-              <Mail className="w-5 h-5 stroke-[1.75]" />
+              <img src="/ICONS/Mail.png" alt="Email" className="w-5 h-5 object-contain" />
             </a>
           </div>
 

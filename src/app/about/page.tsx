@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Mail, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 const services = [
   {
@@ -209,7 +209,7 @@ export default function AboutPage() {
             href="mailto:nourmohamedanwar@gmail.com"
             className="border border-[#FAF9F6]/30 text-[#FAF9F6] font-sans text-sm font-bold px-6 py-3 rounded-full hover:bg-[#FAF9F6]/10 transition-colors flex items-center gap-2"
           >
-            <Mail className="w-4 h-4" /> راسلني
+            <img src="/ICONS/Mail.png" alt="Email" className="w-4 h-4 object-contain invert brightness-200" /> راسلني
           </a>
         </div>
       </section>
