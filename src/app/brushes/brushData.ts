@@ -1,3 +1,17 @@
+export interface SubBrush {
+  id: string;
+  name: string;
+  angle: number;
+  angleLabel: string;
+  desc: string;
+  minWidthRatio?: number;
+  maxWidthRatio?: number;
+  smoothing?: number;
+  inkOpacity?: number;
+  inkBleed?: boolean;
+  isNuqtaStamp?: boolean;
+}
+
 export interface BrushDetailData {
   id: string;
   nameAr: string;
@@ -23,7 +37,7 @@ export interface BrushDetailData {
   specimenAr: string;
   specimenEn: string;
   features: string[];
-  subBrushes?: { name: string; angle: string; desc: string }[];
+  subBrushes?: SubBrush[];
 }
 
 export const brushDataMap: Record<string, BrushDetailData> = {
@@ -55,11 +69,74 @@ export const brushDataMap: Record<string, BrushDetailData> = {
       "حزمة ملف .gobrushes مدمجة وخفيفة الوزن للاستيراد بضغطة واحدة",
     ],
     subBrushes: [
-      { name: "قلم الثلث والنسخ الرصين", angle: "٧٠°", desc: "للعناوين الكبرى والتركيبات الفخمة" },
-      { name: "ريشة الرقعة السريعة", angle: "٥٠°", desc: "للتواقيع والخطوط الحرة العفوية" },
-      { name: "قلم الكوفي المصمت", angle: "٩٠°", desc: "للشعارات والهندسة الطباعية المعاصرة" },
-      { name: "فرشاة الحبر الرطب المعتق", angle: "حر", desc: "للمخطوطات والملمس العضوي" },
-      { name: "قلم التشكيل وميزان النقط", angle: "٤٥°", desc: "للنقاط المعينية وحركات الإعراب" },
+      {
+        id: "nouriyya-master",
+        name: "قصبة نوريّة التوقيعية",
+        angle: 68,
+        angleLabel: "٦٨°",
+        desc: "القصبة المتوازنة الأصيلة لكافة أنواع الخط العربي",
+        minWidthRatio: 0.18,
+        maxWidthRatio: 1.15,
+        smoothing: 0.85,
+        inkOpacity: 0.96,
+      },
+      {
+        id: "thuluth-reed",
+        name: "قلم الثلث والنسخ الرصين",
+        angle: 72,
+        angleLabel: "٧٢°",
+        desc: "للعناوين الكبرى والتركيبات الفخمة ذات التباين العالي",
+        minWidthRatio: 0.12,
+        maxWidthRatio: 1.25,
+        smoothing: 0.88,
+        inkOpacity: 0.98,
+      },
+      {
+        id: "ruqah-express",
+        name: "ريشة الرقعة السريعة",
+        angle: 50,
+        angleLabel: "٥٠°",
+        desc: "للتواقيع والخطوط الحرة العفوية بحواف قاطعة حادة",
+        minWidthRatio: 0.22,
+        maxWidthRatio: 1.05,
+        smoothing: 0.75,
+        inkOpacity: 0.95,
+      },
+      {
+        id: "kufi-block",
+        name: "قلم الكوفي المصمت",
+        angle: 90,
+        angleLabel: "٩٠°",
+        desc: "للشعارات والهندسة الطباعية المعاصرة بزوايا قائمة صريحة",
+        minWidthRatio: 0.85,
+        maxWidthRatio: 1.0,
+        smoothing: 0.9,
+        inkOpacity: 1.0,
+      },
+      {
+        id: "vintage-dawat",
+        name: "فرشاة الحبر الرطب المعتق",
+        angle: 60,
+        angleLabel: "حبر معتق",
+        desc: "للمخطوطات وتأثيرات الحبر العضوي المتسرب على الأطراف",
+        minWidthRatio: 0.3,
+        maxWidthRatio: 1.2,
+        smoothing: 0.8,
+        inkOpacity: 0.82,
+        inkBleed: true,
+      },
+      {
+        id: "tashkeel-nuqta",
+        name: "قلم التشكيل وميزان النقط",
+        angle: 45,
+        angleLabel: "ختم معيني",
+        desc: "للنقاط المعينية وحركات الإعراب بدقة ميزان الخطاط",
+        minWidthRatio: 0.4,
+        maxWidthRatio: 0.8,
+        smoothing: 0.5,
+        inkOpacity: 0.95,
+        isNuqtaStamp: true,
+      },
     ],
   },
   "thuluth-reed": {

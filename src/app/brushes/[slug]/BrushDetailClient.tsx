@@ -37,11 +37,27 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
   const isDrawingRef = useRef(false);
   const lastPointRef = useRef<{ x: number; y: number; time: number; width: number } | null>(null);
 
+  const [selectedSubBrushId, setSelectedSubBrushId] = useState<string>(
+    brush?.subBrushes?.[0]?.id || ""
+  );
   const [baseWidth, setBaseWidth] = useState(28);
   const [selectedColor, setSelectedColor] = useState("#1A1916");
   const [showGuides, setShowGuides] = useState(true);
   const [activeWatermark, setActiveWatermark] = useState<string>("nour");
   const [hasDrawn, setHasDrawn] = useState(false);
+
+  // Active sub-brush or fallback to main brush
+  const currentSubBrush = brush?.subBrushes?.find((s) => s.id === selectedSubBrushId) || brush?.subBrushes?.[0] || null;
+  const activeAngle = currentSubBrush?.angle ?? brush?.angle ?? 68;
+  const activeMinWidthRatio = currentSubBrush?.minWidthRatio ?? brush?.minWidthRatio ?? 0.18;
+  const activeMaxWidthRatio = currentSubBrush?.maxWidthRatio ?? brush?.maxWidthRatio ?? 1.15;
+  const activeSmoothing = currentSubBrush?.smoothing ?? brush?.smoothing ?? 0.85;
+  const activeInkOpacity = currentSubBrush?.inkOpacity ?? brush?.inkOpacity ?? 0.96;
+  const activeInkBleed = currentSubBrush?.inkBleed ?? brush?.inkBleed ?? false;
+  const activeIsNuqtaStamp = currentSubBrush?.isNuqtaStamp ?? brush?.isNuqtaStamp ?? false;
+  const activeBrushName = currentSubBrush?.name ?? brush?.nameAr ?? "الفرشاة";
+  const activeAngleLabel = currentSubBrush?.angleLabel ?? `${activeAngle}°`;
+  const activeBrushDesc = currentSubBrush?.desc ?? `مضبوطة بفيزياء زاوية ${activeAngle}° وانسيابية الحبر الخاصة بها`;
 
   const colors = [
     { name: "حبر أسود شرقي", hex: "#1A1916" },
@@ -98,13 +114,13 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
     p2: { x: number; y: number },
     calculatedWidth: number
   ) => {
-    const rad = (brush.angle * Math.PI) / 180;
+    const rad = (activeAngle * Math.PI) / 180;
     const halfWidth = calculatedWidth / 2;
     const dx = Math.cos(rad) * halfWidth;
     const dy = Math.sin(rad) * halfWidth;
 
     ctx.save();
-    ctx.globalAlpha = brush.inkOpacity;
+    ctx.globalAlpha = activeInkOpacity;
     ctx.fillStyle = selectedColor;
 
     ctx.beginPath();
@@ -119,8 +135,8 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
     ctx.arc(p2.x, p2.y, calculatedWidth * 0.05, 0, Math.PI * 2);
     ctx.fill();
 
-    if (brush.inkBleed) {
-      ctx.globalAlpha = brush.inkOpacity * 0.25;
+    if (activeInkBleed) {
+      ctx.globalAlpha = activeInkOpacity * 0.25;
       ctx.beginPath();
       ctx.arc(p2.x + (Math.random() - 0.5) * 3, p2.y + (Math.random() - 0.5) * 3, calculatedWidth * 0.55, 0, Math.PI * 2);
       ctx.fill();
@@ -167,7 +183,7 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    if (brush.isNuqtaStamp) {
+    if (activeIsNuqtaStamp) {
       drawNuqtaStamp(ctx, coords, baseWidth * 1.3);
     } else {
       drawSegment(ctx, coords, coords, baseWidth);
@@ -191,7 +207,7 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    if (brush.isNuqtaStamp) {
+    if (activeIsNuqtaStamp) {
       const dist = Math.hypot(coords.x - lastPointRef.current.x, coords.y - lastPointRef.current.y);
       if (dist > baseWidth * 1.2) {
         drawNuqtaStamp(ctx, coords, baseWidth * 1.3);
@@ -202,14 +218,13 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
 
     const last = lastPointRef.current;
     const dist = Math.hypot(coords.x - last.x, coords.y - last.y);
-    const dt = Math.max(now - last.time, 1);
 
     const strokeAngle = Math.atan2(coords.y - last.y, coords.x - last.x);
-    const bladeAngleRad = (brush.angle * Math.PI) / 180;
+    const bladeAngleRad = (activeAngle * Math.PI) / 180;
     const angleDiff = Math.abs(Math.sin(strokeAngle - bladeAngleRad));
 
     const targetWidth = Math.max(
-      baseWidth * (brush.minWidthRatio + angleDiff * (brush.maxWidthRatio - brush.minWidthRatio)),
+      baseWidth * (activeMinWidthRatio + angleDiff * (activeMaxWidthRatio - activeMinWidthRatio)),
       4
     );
 
@@ -380,14 +395,19 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
                 <PenTool className="w-5 h-5" />
               </div>
               <div className="text-right">
-                <h3
-                  className="text-lg sm:text-2xl font-black text-black"
-                  style={{ fontFamily: "'Arsenica', serif" }}
-                >
-                  مخبر تجربة {brush.nameAr}
-                </h3>
-                <p className="text-xs text-black/55 font-sans">
-                  مضبوطة بفيزياء زاوية {brush.angle}° وانسيابية الحبر الخاصة بها
+                <div className="flex items-center gap-2">
+                  <h3
+                    className="text-lg sm:text-2xl font-black text-black"
+                    style={{ fontFamily: "'Arsenica', serif" }}
+                  >
+                    مخبر تجربة {activeBrushName}
+                  </h3>
+                  <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#E8C87A] text-[#1A1916]">
+                    {activeAngleLabel}
+                  </span>
+                </div>
+                <p className="text-xs text-black/55 font-sans mt-0.5">
+                  {activeBrushDesc}
                 </p>
               </div>
             </div>
@@ -423,6 +443,71 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
               )}
             </div>
           </div>
+
+          {/* Sub-Brushes Selector Tray */}
+          {brush.subBrushes && brush.subBrushes.length > 0 && (
+            <div className="py-4 border-b border-black/10">
+              <div className="flex items-center justify-between gap-2 mb-3">
+                <span className="text-xs font-bold text-black/70 flex items-center gap-1.5 font-sans">
+                  <Sparkles className="w-3.5 h-3.5 text-[#E8C87A]" />
+                  <span>الفرش المتضمنة في الحزمة ({brush.subBrushes.length} فرش — اختر فرشاة للتجربة المباشرة):</span>
+                </span>
+                <span className="text-[11px] font-semibold text-black/40 hidden sm:inline">
+                  انقر للتبديل الفوري بين زوايا وفيزياء الفرش
+                </span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3">
+                {brush.subBrushes.map((sub, idx) => {
+                  const isSelected = (currentSubBrush?.id === sub.id) || (!selectedSubBrushId && idx === 0);
+                  return (
+                    <button
+                      key={sub.id}
+                      onClick={() => setSelectedSubBrushId(sub.id)}
+                      className={`relative p-3 rounded-2xl border text-right transition-all flex flex-col justify-between gap-1.5 group cursor-pointer ${
+                        isSelected
+                          ? "bg-[#1A1916] text-[#FAF9F6] border-[#1A1916] shadow-md scale-[1.02]"
+                          : "bg-white/80 hover:bg-white text-black/80 border-black/10 hover:border-black/25 shadow-2xs"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between w-full gap-1">
+                        <span
+                          className={`px-2 py-0.5 rounded-full text-[10px] font-bold border tracking-wider ${
+                            isSelected
+                              ? "bg-[#FAF9F6]/15 text-[#E8C87A] border-[#FAF9F6]/20"
+                              : "bg-black/5 text-black/60 border-black/10"
+                          }`}
+                        >
+                          {sub.angleLabel}
+                        </span>
+                        <div
+                          className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold ${
+                            isSelected ? "bg-[#E8C87A] text-[#1A1916]" : "bg-black/5 text-black/40"
+                          }`}
+                        >
+                          {idx + 1}
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          className="font-bold text-xs sm:text-sm leading-snug truncate"
+                          style={{ fontFamily: "'Arsenica', serif" }}
+                        >
+                          {sub.name}
+                        </div>
+                        <p
+                          className={`text-[10px] line-clamp-1 mt-0.5 ${
+                            isSelected ? "text-[#FAF9F6]/70" : "text-black/50"
+                          }`}
+                        >
+                          {sub.desc}
+                        </p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* Stroke Customizer Controls */}
           <div className="flex flex-wrap items-center justify-between gap-4 py-4 border-b border-black/5 text-sm">
@@ -479,7 +564,7 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
               <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-8 sm:p-12 opacity-25">
                 <div className="border-b border-dashed border-red-500/50 flex items-center justify-between text-[10px] text-red-500 font-sans">
                   <span>خط القمة (Ascender)</span>
-                  <span>{brush.angle}° زاوية القلم</span>
+                  <span>{activeAngleLabel} زاوية القلم</span>
                 </div>
                 <div className="border-b border-dashed border-blue-500/50 flex items-center justify-between text-[10px] text-blue-500 font-sans">
                   <span>خط الوسط (X-Height)</span>
@@ -510,7 +595,7 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
             {!hasDrawn && (
               <div className="absolute bottom-6 left-6 right-6 flex items-center justify-center pointer-events-none">
                 <span className="px-4 py-1.5 rounded-full bg-black/5 text-black/40 text-xs font-sans">
-                  اكتب أو ارسم هنا لتجربة {brush.nameAr} الحية
+                  اكتب أو ارسم هنا لتجربة {activeBrushName} الحية
                 </span>
               </div>
             )}
@@ -562,13 +647,29 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
           {brush.subBrushes ? (
             <div className="flex flex-col gap-3">
               {brush.subBrushes.map((sub, i) => (
-                <div key={i} className="p-3.5 rounded-2xl bg-black/[0.03] flex items-center justify-between">
+                <div
+                  key={i}
+                  onClick={() => setSelectedSubBrushId(sub.id)}
+                  className={`p-3.5 rounded-2xl flex items-center justify-between transition-all cursor-pointer ${
+                    currentSubBrush?.id === sub.id
+                      ? "bg-[#1A1916] text-[#FAF9F6]"
+                      : "bg-black/[0.03] hover:bg-black/[0.06] text-black"
+                  }`}
+                >
                   <div>
-                    <span className="font-bold text-sm text-black block">{sub.name}</span>
-                    <span className="text-xs text-black/55">{sub.desc}</span>
+                    <span className="font-bold text-sm block">{sub.name}</span>
+                    <span className={`text-xs ${currentSubBrush?.id === sub.id ? "text-[#FAF9F6]/70" : "text-black/55"}`}>
+                      {sub.desc}
+                    </span>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full bg-white text-xs font-bold text-black/70 border border-black/5">
-                    {sub.angle}
+                  <span
+                    className={`px-2.5 py-1 rounded-full text-xs font-bold border ${
+                      currentSubBrush?.id === sub.id
+                        ? "bg-[#FAF9F6]/15 text-[#E8C87A] border-[#FAF9F6]/20"
+                        : "bg-white text-black/70 border-black/5"
+                    }`}
+                  >
+                    {sub.angleLabel || sub.angle}
                   </span>
                 </div>
               ))}
