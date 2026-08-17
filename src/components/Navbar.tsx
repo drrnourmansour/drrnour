@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Instagram, Mail, Menu, X } from "lucide-react";
+import { Mail, Menu, X } from "lucide-react";
 import { useTransitionNav } from "@/components/TransitionProvider";
 
 export default function Navbar() {
@@ -92,11 +92,11 @@ export default function Navbar() {
               title="انستغرام (@drrnour)"
             >
               <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[28px]">
-                <div className="h-[28px] w-[28px] flex items-center justify-center text-black shrink-0">
-                  <Instagram className="w-5 h-5 stroke-[2.25]" />
+                <div className="h-[28px] w-[28px] flex items-center justify-center shrink-0">
+                  <img src="/ICONS/Instagram.png" alt="Instagram" className="w-5 h-5 object-contain" />
                 </div>
-                <div className="h-[28px] w-[28px] flex items-center justify-center text-black/70 shrink-0">
-                  <Instagram className="w-5 h-5 stroke-[2.5]" />
+                <div className="h-[28px] w-[28px] flex items-center justify-center opacity-70 shrink-0">
+                  <img src="/ICONS/Instagram.png" alt="Instagram" className="w-5 h-5 object-contain" />
                 </div>
               </div>
             </a>
@@ -167,10 +167,10 @@ export default function Navbar() {
                   href="https://instagram.com/drrnour"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black hover:opacity-50 transition-opacity"
+                  className="text-black hover:opacity-50 transition-opacity flex items-center justify-center"
                   title="@drrnour"
                 >
-                  <Instagram className="w-6 h-6 stroke-[1.75]" />
+                  <img src="/ICONS/Instagram.png" alt="Instagram" className="w-6 h-6 object-contain" />
                 </a>
                 <a
                   href="mailto:nourmohamedanwar@gmail.com"

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Instagram, Mail, ArrowLeft } from "lucide-react";
+import { Mail, ArrowLeft } from "lucide-react";
 
 const services = [
   {
@@ -203,7 +203,7 @@ export default function AboutPage() {
             rel="noopener noreferrer"
             className="bg-[#FAF9F6] text-[#1A1916] font-sans text-sm font-extrabold px-6 py-3 rounded-full hover:bg-[#FFE500] transition-colors flex items-center gap-2"
           >
-            <Instagram className="w-4 h-4" /> @drrnour
+            <img src="/ICONS/Instagram.png" alt="Instagram" className="w-4 h-4 object-contain" /> @drrnour
           </a>
           <a
             href="mailto:nourmohamedanwar@gmail.com"

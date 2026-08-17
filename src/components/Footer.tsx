@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Instagram, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -68,10 +68,10 @@ export default function Footer() {
               href="https://instagram.com/drrnour"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-block"
+              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center"
               title="انستغرام (@drrnour)"
             >
-              <Instagram className="w-5 h-5 stroke-[1.75]" />
+              <img src="/ICONS/Instagram.png" alt="Instagram" className="w-5 h-5 object-contain" />
             </a>
             
             {/* Behance Monogram */}

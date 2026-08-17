@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowRight, ShoppingBag, X, Check, Mail, Instagram, Copy } from "lucide-react";
+import { ArrowRight, ShoppingBag, X, Check, Mail, Copy } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTransitionNav } from "@/components/TransitionProvider";
 
@@ -375,7 +375,7 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
                     rel="noopener noreferrer"
                     className="flex-1 border border-black/15 hover:bg-black/5 text-black py-2.5 px-4 rounded-full font-semibold font-sans text-xs flex items-center justify-center gap-2 transition-colors text-center"
                   >
-                    <Instagram className="w-3.5 h-3.5" />
+                    <img src="/ICONS/Instagram.png" alt="Instagram" className="w-4 h-4 object-contain" />
                     <span>مراسلة عبر إنستغرام</span>
                   </a>
 
