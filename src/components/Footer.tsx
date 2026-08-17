@@ -15,9 +15,9 @@ export default function Footer() {
 
   const navLinks = [
     { nameAr: "خطوط", nameEn: "Fonts", href: "/fonts" },
-    { nameAr: "فُرَش", nameEn: "Brushes", href: "/brushes" },
+    { nameAr: "فرش", nameEn: "Brushes", href: "/brushes" },
     { nameAr: "المدونة", nameEn: "Journal", href: "/journal" },
-    { nameAr: "عنِّي", nameEn: "About", href: "/about" },
+    { nameAr: "عنّي", nameEn: "About", href: "/about" },
   ];
 
   const handleSubscribe = (e: React.FormEvent) => {
@@ -51,7 +51,7 @@ export default function Footer() {
               type="submit"
               className="font-sans text-sm font-bold text-black hover:opacity-60 transition-opacity border-b border-black pb-0.5 whitespace-nowrap"
             >
-              {subscribed ? "تم الاشتراِك ✓" : "اشترك"}
+              {subscribed ? "تم الاشتراك ✓" : "اشترك"}
             </button>
           </form>
 
@@ -121,7 +121,7 @@ export default function Footer() {
 
         {/* Left Column: Copyright Notice (RTL Column 3) */}
         <div className="flex flex-col gap-1 items-center md:items-start text-center md:text-left text-xs font-sans text-black/60 w-full">
-          <p>جميع الحقوق محفوظة. يُمنع الاستخدام أو التوزيع دون إذن كتابي.</p>
+          <p>جميع الحقوق محفوظة. يمنع الاستخدام أو التوزيع دون إذن كتابي.</p>
           <p className="tracking-wide">All rights reserved. No use or distribution without permission.</p>
         </div>
 

@@ -16,12 +16,12 @@ interface FontDetail {
 const fontData: Record<string, FontDetail> = {
   "talheen": {
     id: "talheen",
-    nameAr: "تَلْحِين",
+    nameAr: "تلحين",
     nameEn: "Talheen",
-    category: "خط يدوي عَفْوي",
+    category: "خط يدوي عفوي",
     stylesAr: "٣ أنماط",
     stylesEn: "3 Styles",
-    description: "خطٌّ يدويٌّ عربيٌّ يعكس العفوية والحركيّة الخطّيّة بنكهة الشَّخابيط المعاصرة.",
+    description: "خطّ يدويّ عربيّ يعكس العفوية والحركيّة الخطّيّة بنكهة الشّخابيط المعاصرة.",
     bgClass: "bg-[#E8C87A]",
     fontFamily: "'Aref Ruqaa', serif",
     weights: [
@@ -31,12 +31,12 @@ const fontData: Record<string, FontDetail> = {
   },
   "waraqa": {
     id: "waraqa",
-    nameAr: "وَرَقَة",
+    nameAr: "ورقة",
     nameEn: "Waraqa",
     category: "خط هندسي معاصر",
     stylesAr: "٦ أنماط، متغير",
     stylesEn: "6 Styles, Variable",
-    description: "عائلة طباعية هندسية مرنة ثنائية اللغة صُممت للمجلات والهويات البصرية المعاصرة.",
+    description: "عائلة طباعية هندسية مرنة ثنائية اللغة صممت للمجلات والهويات البصرية المعاصرة.",
     bgClass: "bg-[#D4C5B8]",
     fontFamily: "'Cairo', sans-serif",
     weights: [
@@ -49,7 +49,7 @@ const fontData: Record<string, FontDetail> = {
   },
   "khatt-nour": {
     id: "khatt-nour",
-    nameAr: "خَط نُور",
+    nameAr: "خط نور",
     nameEn: "Khatt Nour",
     category: "كوفي حديث للعناوين",
     stylesAr: "٦ أنماط، متغير",
@@ -65,7 +65,7 @@ const fontData: Record<string, FontDetail> = {
   },
   "majd": {
     id: "majd",
-    nameAr: "مَجْد",
+    nameAr: "مجد",
     nameEn: "Majd",
     category: "خط نسخي متغيّر",
     stylesAr: "٧ أنماط، متغير",
@@ -82,12 +82,12 @@ const fontData: Record<string, FontDetail> = {
   },
   "rawaa": {
     id: "rawaa",
-    nameAr: "رَوْعَة",
+    nameAr: "روعة",
     nameEn: "Rawaa",
     category: "خط علامات تجارية",
     stylesAr: "٨ أنماط",
     stylesEn: "8 Styles",
-    description: "خط تعبيري قوي صُمم خصيصاً للشعارات وحملات الإعلانات ثنائية اللغة.",
+    description: "خط تعبيري قوي صمم خصيصا للشعارات وحملات الإعلانات ثنائية اللغة.",
     bgClass: "bg-[#C8BF8A]",
     fontFamily: "'Readex Pro', sans-serif",
     weights: [
@@ -98,7 +98,7 @@ const fontData: Record<string, FontDetail> = {
   },
   "naskh-modern": {
     id: "naskh-modern",
-    nameAr: "نَسْخ",
+    nameAr: "نسخ",
     nameEn: "Naskh Modern",
     category: "خط أصيل متطور",
     stylesAr: "٤ أنماط",

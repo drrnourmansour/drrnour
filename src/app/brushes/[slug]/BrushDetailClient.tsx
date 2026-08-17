@@ -24,9 +24,9 @@ interface BrushDetailClientProps {
 
 const sampleWatermarks = [
   { id: "none", label: "لوحة فارغة", text: "" },
-  { id: "nour", label: "نُور", text: "نُور" },
-  { id: "qalam", label: "والقَلَم", text: "وَالقَلَمِ" },
-  { id: "khatt", label: "خَطّ", text: "خَطّ" },
+  { id: "nour", label: "نور", text: "نور" },
+  { id: "qalam", label: "والقلم", text: "والقلم" },
+  { id: "khatt", label: "خطّ", text: "خطّ" },
 ];
 
 export default function BrushDetailClient({ brush, slug }: BrushDetailClientProps) {
@@ -85,7 +85,7 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
           onClick={() => navigateTo("/brushes")}
           className="underline font-sans text-base sm:text-lg"
         >
-          العودة لجميع الفُرَش
+          العودة لجميع الفرش
         </button>
       </main>
     );
@@ -268,7 +268,7 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
           className="inline-flex items-center gap-2 text-sm font-bold text-black/60 hover:text-black transition-colors"
         >
           <ArrowRight className="w-4 h-4" />
-          <span>العودة لقائمة الفُرَش</span>
+          <span>العودة لقائمة الفرش</span>
         </button>
       </div>
 
@@ -353,7 +353,7 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
                 }}
               >
                 <Download className="w-5 h-5" />
-                <span>تحميل الفرشاة مجاناً</span>
+                <span>تحميل الفرشاة مجانا</span>
               </a>
             ) : (
               <div
@@ -363,7 +363,7 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
                   borderColor: brush.textColor === "dark" ? "rgba(26,25,22,0.3)" : "rgba(250,249,246,0.3)",
                 }}
               >
-                قريباً للتحميل
+                قريبا للتحميل
               </div>
             )}
           </div>
@@ -384,7 +384,7 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
                   className="text-lg sm:text-2xl font-black text-black"
                   style={{ fontFamily: "'Arsenica', serif" }}
                 >
-                  مِخْبَر تَجْرِبَة {brush.nameAr}
+                  مخبر تجربة {brush.nameAr}
                 </h3>
                 <p className="text-xs text-black/55 font-sans">
                   مضبوطة بفيزياء زاوية {brush.angle}° وانسيابية الحبر الخاصة بها
@@ -427,7 +427,7 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
           {/* Stroke Customizer Controls */}
           <div className="flex flex-wrap items-center justify-between gap-4 py-4 border-b border-black/5 text-sm">
             <div className="flex items-center gap-3">
-              <span className="text-xs font-bold text-black/40">سُمك القَطّة ({baseWidth}px):</span>
+              <span className="text-xs font-bold text-black/40">سمك القطّة ({baseWidth}px):</span>
               <input
                 type="range"
                 min={10}

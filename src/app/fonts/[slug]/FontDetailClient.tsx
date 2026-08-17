@@ -47,7 +47,7 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
 
   const [fontSize, setFontSize] = useState(56);
   const [sampleText, setSampleText] = useState(
-    "اللُّغَةُ العَرَبِيَّةُ فَنٌّ وَتَرَاثٌ خَالِدٌ عَبْرَ العُصُور"
+    "اللّغة العربيّة فنّ وتراث خالد عبر العصور"
   );
   const [selectedLicense, setSelectedLicense] = useState("desktop");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -79,7 +79,7 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
 
   const emailSubject = encodeURIComponent("طلب ترخيص خط: " + font.nameAr + " (" + font.nameEn + ") - ترخيص " + currentLicense.titleAr);
   const emailBody = encodeURIComponent(
-    "مرحباً نور،\n\n" +
+    "مرحبا نور،\n\n" +
     "أود طلب ترخيص خط عائلة " + font.nameAr + " (" + font.nameEn + ").\n\n" +
     "تفاصيل الطلب:\n" +
     "- اسم الخط: " + font.nameAr + " / " + font.nameEn + "\n" +
@@ -87,7 +87,7 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
     "- اسم المشتري / الجهة: " + (buyerName || "غير محدد") + "\n" +
     "- البريد الإلكتروني للتواصل: " + (buyerEmail || "غير محدد") + "\n" +
     (buyerNotes ? "- ملاحظات إضافية: " + buyerNotes + "\n" : "") + "\n" +
-    "شكراً لك!"
+    "شكرا لك!"
   );
 
   const mailtoUrl = "mailto:nourmohamedanwar@gmail.com?subject=" + emailSubject + "&body=" + emailBody;
@@ -140,12 +140,12 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
           <a href="#workbench" className="w-full sm:w-auto text-center bg-[#1A1916] text-[#FAF9F6] px-6 sm:px-8 py-3.5 rounded-full font-bold font-sans text-sm sm:text-base hover:opacity-85 transition-opacity shadow-sm">
             تجربة الخط التفاعلية
           </a>
-          <button
-            onClick={() => setIsModalOpen(true)}
+          <a
+            href="#licensing"
             className="w-full sm:w-auto text-center bg-[#FAF9F6] text-[#1A1916] px-6 sm:px-8 py-3.5 rounded-full font-bold font-sans text-sm sm:text-base border border-[#1A1916] hover:bg-[#1A1916] hover:text-[#FAF9F6] transition-colors shadow-sm cursor-pointer"
           >
             شراء وطلب الترخيص
-          </button>
+          </a>
         </div>
       </div>
 
@@ -189,7 +189,7 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
                 {w.nameAr} — {w.nameEn} ({w.weight})
               </div>
               <div style={{ fontFamily: font.fontFamily, fontWeight: w.weight }} className="text-2xl sm:text-4xl md:text-5xl text-black flex-1 break-words leading-tight sm:leading-snug">
-                نُورُ المَعْرِفَةِ يُضِيءُ الدَّرْبَ
+                نور المعرفة يضيء الدّرب
               </div>
             </div>
           ))}
@@ -213,7 +213,7 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
       </section>
 
       {/* Font Licensing & Order Section */}
-      <section id="licensing" className="bg-[#F0EDE8] border border-black/10 rounded-2xl sm:rounded-[36px] p-5 sm:p-10 md:p-14 mb-12 sm:mb-16">
+      <section id="licensing" className="scroll-mt-24 sm:scroll-mt-28 bg-[#F0EDE8] border border-black/10 rounded-2xl sm:rounded-[36px] p-5 sm:p-10 md:p-14 mb-12 sm:mb-16">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-extrabold mb-2 sm:mb-3">ترخيص عائلة {font.nameAr}</h2>
           <p className="font-sans text-xs sm:text-base md:text-lg text-black/65 mb-6 sm:mb-10">
@@ -250,12 +250,12 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
         <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-extrabold mb-6 sm:mb-8">خطوط أخرى قد تعجبك</h2>
         <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-4">
           {Object.entries({
-            "talheen": { nameAr: "تَلْحِين", bgClass: "bg-[#E8C87A]", fontFamily: "'Aref Ruqaa', serif" },
-            "waraqa": { nameAr: "وَرَقَة", bgClass: "bg-[#D4C5B8]", fontFamily: "'Cairo', sans-serif" },
-            "khatt-nour": { nameAr: "خَط نُور", bgClass: "bg-[#96B5A4]", fontFamily: "'Reem Kufi', sans-serif" },
-            "majd": { nameAr: "مَجْد", bgClass: "bg-[#D4907A]", fontFamily: "'Tajawal', sans-serif" },
-            "rawaa": { nameAr: "رَوْعَة", bgClass: "bg-[#C8BF8A]", fontFamily: "'Readex Pro', sans-serif" },
-            "naskh-modern": { nameAr: "نَسْخ", bgClass: "bg-[#C9BECC]", fontFamily: "'Amiri', serif" },
+            "talheen": { nameAr: "تلحين", bgClass: "bg-[#E8C87A]", fontFamily: "'Aref Ruqaa', serif" },
+            "waraqa": { nameAr: "ورقة", bgClass: "bg-[#D4C5B8]", fontFamily: "'Cairo', sans-serif" },
+            "khatt-nour": { nameAr: "خط نور", bgClass: "bg-[#96B5A4]", fontFamily: "'Reem Kufi', sans-serif" },
+            "majd": { nameAr: "مجد", bgClass: "bg-[#D4907A]", fontFamily: "'Tajawal', sans-serif" },
+            "rawaa": { nameAr: "روعة", bgClass: "bg-[#C8BF8A]", fontFamily: "'Readex Pro', sans-serif" },
+            "naskh-modern": { nameAr: "نسخ", bgClass: "bg-[#C9BECC]", fontFamily: "'Amiri', serif" },
           } as Record<string, { nameAr: string; bgClass: string; fontFamily: string }>)
             .filter(([key]) => key !== slug)
             .slice(0, 3)

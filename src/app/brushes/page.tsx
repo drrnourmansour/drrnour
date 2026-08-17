@@ -63,7 +63,7 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
               fontFamily: "'Bricolage Grotesque', sans-serif",
             }}
           >
-            قريبًا · Soon
+            قريبا · Soon
           </span>
         </div>
       )}
@@ -99,10 +99,10 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
             fontFamily: "'Arsenica', serif",
             color: ink,
             fontSize: "clamp(2.4rem, 6.5vw, 4.8rem)",
-            lineHeight: 1.1,
+            lineHeight: 1.25,
             fontWeight: 800,
           }}
-          className="group-hover:scale-105 transition-transform duration-300"
+          className="group-hover:scale-105 transition-transform duration-300 mb-2 sm:mb-3"
         >
           {pack.nameAr}
         </h2>
@@ -111,7 +111,7 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
             fontFamily: "'Bricolage Grotesque', sans-serif",
             color: inkMid,
           }}
-          className="text-xs sm:text-sm font-semibold tracking-wider uppercase mt-1"
+          className="text-xs sm:text-sm font-semibold tracking-wider uppercase"
         >
           {pack.nameEn}
         </span>
@@ -200,7 +200,7 @@ function BrushListCard({ pack }: { pack: BrushDetailData }) {
               fontFamily: "'Bricolage Grotesque', sans-serif",
             }}
           >
-            قريبًا · Soon
+            قريبا · Soon
           </span>
         </div>
       )}
@@ -293,13 +293,13 @@ function Newsletter() {
             style={{ fontFamily: "'Arsenica', serif", color: "#FAF9F6" }}
             className="text-2xl sm:text-4xl font-bold leading-tight"
           >
-            ابقَ على اطّلاع
+            ابق على اطّلاع
           </h2>
           <p
             style={{ fontFamily: "'Bricolage Grotesque', sans-serif", color: "rgba(250,249,246,0.5)" }}
             className="text-sm sm:text-base"
           >
-            استقبل تحديثات عن الفُرَش الجديدة والخطوط الرقمية
+            استقبل تحديثات عن الفرش الجديدة والخطوط الرقمية
           </p>
         </div>
         <form
@@ -361,22 +361,22 @@ export default function BrushesPage() {
           <span>أدوات الخط والرسم الرقمي · Digital Calligraphy &amp; Brushes</span>
         </motion.div>
 
-        <h1 className="font-serif text-4xl sm:text-7xl font-black text-black mb-1 leading-tight">
-          فُرَش الخط العربي الرقمي
+        <h1 className="font-serif text-4xl sm:text-7xl font-black text-black mb-3 sm:mb-4 leading-normal sm:leading-tight">
+          فرش الخط العربي الرقمي
         </h1>
 
         <p
-          className="text-lg sm:text-2xl font-semibold text-black/80 mb-2"
+          className="text-lg sm:text-2xl font-semibold text-black/80 mb-3 sm:mb-4"
           style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
         >
           Arabic Calligraphy &amp; Digital Brushes
         </p>
 
         <p
-          className="text-sm text-black/50 font-medium mb-6 sm:mb-8 max-w-xl"
+          className="text-sm text-black/50 font-medium mb-8 sm:mb-10 max-w-xl"
           style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
         >
-          {availablePacks.length} حزمة فُرَش متاحة للتحميل الفوري
+          {availablePacks.length} حزمة فرش متاحة للتحميل الفوري
           {activeCategory !== "الكل" && ` في فئة "${activeCategory}"`} بصيغة .gobrushes
         </p>
 
@@ -444,7 +444,7 @@ export default function BrushesPage() {
         >
           {filteredPacks.length === 0 ? (
             <div className="col-span-2 text-center py-24 text-black/40 font-sans">
-              لا توجد فُرَش في هذه الفئة بعد.
+              لا توجد فرش في هذه الفئة بعد.
             </div>
           ) : (
             filteredPacks.map((pack, i) => (

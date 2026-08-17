@@ -27,7 +27,7 @@ interface FontItem {
 const fontsList: FontItem[] = [
   {
     id: "talheen",
-    title: "تَلْحِين",
+    title: "تلحين",
     titleEn: "Talheen",
     fontFamily: "'Aref Ruqaa', serif",
     bg: "#E8C87A",
@@ -35,12 +35,12 @@ const fontsList: FontItem[] = [
     stylesAr: "٣ أنماط",
     stylesEn: "3 styles",
     category: "يدوي",
-    specimenAr: "أَبْجَدْ هَوَّزْ حُطِّي كَلَمُنْ",
+    specimenAr: "أبجد هوّز حطّي كلمن",
     specimenEn: "The quick brown fox",
   },
   {
     id: "waraqa",
-    title: "وَرَقَة",
+    title: "ورقة",
     titleEn: "Waraqa",
     fontFamily: "'Cairo', sans-serif",
     bg: "#D4C5B8",
@@ -48,12 +48,12 @@ const fontsList: FontItem[] = [
     stylesAr: "٦ أنماط، متغير",
     stylesEn: "6 styles, Variable",
     category: "هندسي",
-    specimenAr: "أَبْجَدْ هَوَّزْ حُطِّي كَلَمُنْ",
+    specimenAr: "أبجد هوّز حطّي كلمن",
     specimenEn: "The quick brown fox",
   },
   {
     id: "khatt-nour",
-    title: "خَط نُور",
+    title: "خط نور",
     titleEn: "Khatt Nour",
     fontFamily: "'Reem Kufi', sans-serif",
     bg: "#96B5A4",
@@ -61,12 +61,12 @@ const fontsList: FontItem[] = [
     stylesAr: "٦ أنماط، متغير",
     stylesEn: "6 styles, Variable",
     category: "كوفي",
-    specimenAr: "أَبْجَدْ هَوَّزْ حُطِّي كَلَمُنْ",
+    specimenAr: "أبجد هوّز حطّي كلمن",
     specimenEn: "The quick brown fox",
   },
   {
     id: "majd",
-    title: "مَجْد",
+    title: "مجد",
     titleEn: "Majd",
     fontFamily: "'Tajawal', sans-serif",
     bg: "#D4907A",
@@ -74,12 +74,12 @@ const fontsList: FontItem[] = [
     stylesAr: "٧ أنماط، متغير",
     stylesEn: "7 styles, Variable",
     category: "هندسي",
-    specimenAr: "أَبْجَدْ هَوَّزْ حُطِّي كَلَمُنْ",
+    specimenAr: "أبجد هوّز حطّي كلمن",
     specimenEn: "The quick brown fox",
   },
   {
     id: "rawaa",
-    title: "رَوْعَة",
+    title: "روعة",
     titleEn: "Rawaa",
     fontFamily: "'Readex Pro', sans-serif",
     bg: "#C8BF8A",
@@ -87,12 +87,12 @@ const fontsList: FontItem[] = [
     stylesAr: "٨ أنماط",
     stylesEn: "8 styles",
     category: "يدوي",
-    specimenAr: "أَبْجَدْ هَوَّزْ حُطِّي كَلَمُنْ",
+    specimenAr: "أبجد هوّز حطّي كلمن",
     specimenEn: "The quick brown fox",
   },
   {
     id: "naskh-modern",
-    title: "نَسْخ",
+    title: "نسخ",
     titleEn: "Naskh",
     fontFamily: "'Amiri', serif",
     bg: "#1A1916",
@@ -100,12 +100,12 @@ const fontsList: FontItem[] = [
     stylesAr: "٤ أنماط",
     stylesEn: "4 styles",
     category: "نسخي",
-    specimenAr: "أَبْجَدْ هَوَّزْ حُطِّي كَلَمُنْ",
+    specimenAr: "أبجد هوّز حطّي كلمن",
     specimenEn: "The quick brown fox",
   },
   {
     id: "zuhal",
-    title: "زُحَل",
+    title: "زحل",
     titleEn: "Zuhal",
     fontFamily: "'Tajawal', sans-serif",
     bg: "#3A3D8A",
@@ -113,7 +113,7 @@ const fontsList: FontItem[] = [
     stylesAr: "٦٣ نمط، متغير",
     stylesEn: "63 styles, Variable",
     category: "هندسي",
-    specimenAr: "أَبْجَدْ هَوَّزْ حُطِّي كَلَمُنْ",
+    specimenAr: "أبجد هوّز حطّي كلمن",
     specimenEn: "The quick brown fox",
     soon: true,
   },
@@ -174,7 +174,7 @@ function GridCard({ font }: { font: FontItem }) {
             className="px-5 py-2 rounded-full text-sm font-bold tracking-widest border"
             style={{ color: ink, borderColor: border, fontFamily: "'Bricolage Grotesque', sans-serif" }}
           >
-            قريبًا · Soon
+            قريبا · Soon
           </span>
         </div>
       )}
@@ -288,7 +288,7 @@ function ListCard({ font }: { font: FontItem }) {
           style={{ backgroundColor: `${font.bg}BB` }}>
           <span className="px-4 py-1.5 rounded-full text-xs font-bold border tracking-widest"
             style={{ color: ink, borderColor: border, fontFamily: "'Bricolage Grotesque', sans-serif" }}>
-            قريبًا · Soon
+            قريبا · Soon
           </span>
         </div>
       )}
@@ -357,7 +357,7 @@ function Newsletter() {
         <div className="flex flex-col gap-2">
           <h2 style={{ fontFamily: "'Arsenica', serif", color: "#FAF9F6" }}
             className="text-2xl sm:text-4xl font-bold leading-tight">
-            ابقَ على اطّلاع
+            ابق على اطّلاع
           </h2>
           <p style={{ fontFamily: "'Bricolage Grotesque', sans-serif", color: "rgba(250,249,246,0.5)" }}
             className="text-sm sm:text-base">
@@ -420,17 +420,17 @@ export default function FontsPage() {
         </div>
 
         {/* Titles */}
-        <h1 className="font-serif text-3xl sm:text-6xl font-extrabold text-black mb-1">
+        <h1 className="font-serif text-3xl sm:text-6xl font-extrabold text-black mb-3 sm:mb-4 leading-normal sm:leading-tight">
           خطوط عربية ولاتينية
         </h1>
         <p
-          className="text-lg sm:text-2xl font-semibold text-black mb-1"
+          className="text-lg sm:text-2xl font-semibold text-black mb-3 sm:mb-4"
           style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
         >
           Arabic &amp; Latin Fonts
         </p>
         <p
-          className="text-sm text-black/40 font-medium mb-6 sm:mb-8"
+          className="text-sm text-black/40 font-medium mb-8 sm:mb-10"
           style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
         >
           {available.length} خط متاح

@@ -10,42 +10,42 @@ interface FontInfo {
 
 const fontData: Record<string, FontInfo> = {
   talheen: {
-    nameAr: "تَلْحِين",
+    nameAr: "تلحين",
     nameEn: "Talheen",
-    category: "خط يدوي عَفْوي",
-    description: "خطٌّ يدويٌّ عربيٌّ يعكس العفوية والحركيّة الخطّيّة بنكهة الشَّخابيط المعاصرة.",
+    category: "خط يدوي عفوي",
+    description: "خطّ يدويّ عربيّ يعكس العفوية والحركيّة الخطّيّة بنكهة الشّخابيط المعاصرة.",
     bgClass: "#E8C87A",
   },
   waraqa: {
-    nameAr: "وَرَقَة",
+    nameAr: "ورقة",
     nameEn: "Waraqa",
     category: "خط هندسي معاصر",
-    description: "عائلة طباعية هندسية مرنة ثنائية اللغة صُممت للمجلات والهويات البصرية المعاصرة.",
+    description: "عائلة طباعية هندسية مرنة ثنائية اللغة صممت للمجلات والهويات البصرية المعاصرة.",
     bgClass: "#D4C5B8",
   },
   "khatt-nour": {
-    nameAr: "خَط نُور",
+    nameAr: "خط نور",
     nameEn: "Khatt Nour",
     category: "كوفي حديث للعناوين",
     description: "الخط التوقيعي للمصمم نور محمد؛ يستند إلى التراث الكوفي بأسلوب حديث ورشيق.",
     bgClass: "#96B5A4",
   },
   majd: {
-    nameAr: "مَجْد",
+    nameAr: "مجد",
     nameEn: "Majd",
     category: "خط نسخي متغيّر",
     description: "خط عربي ذكي متعدد الأوزان مناسب للنصوص الطويلة والشاشات الرقمية العالية الدقة.",
     bgClass: "#D4907A",
   },
   rawaa: {
-    nameAr: "رَوْعَة",
+    nameAr: "روعة",
     nameEn: "Rawaa",
     category: "خط علامات تجارية",
-    description: "خط تعبيري قوي صُمم خصيصاً للشعارات وحملات الإعلانات ثنائية اللغة.",
+    description: "خط تعبيري قوي صمم خصيصا للشعارات وحملات الإعلانات ثنائية اللغة.",
     bgClass: "#C8BF8A",
   },
   "naskh-modern": {
-    nameAr: "نَسْخ",
+    nameAr: "نسخ",
     nameEn: "Naskh Modern",
     category: "خط أصيل متطور",
     description: "قراءة معاصرة لقواعد خط النسخ العربي الشريف مخصص للكتب والمنشورات الثقافية.",
@@ -63,7 +63,7 @@ export async function generateMetadata({
   if (!font) {
     return {
       title: "الخط غير موجود",
-      description: "عذراً، الخط المطلوب غير متاح في المكتبة.",
+      description: "عذرا، الخط المطلوب غير متاح في المكتبة.",
     };
   }
 

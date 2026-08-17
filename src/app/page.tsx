@@ -10,8 +10,8 @@ export default function Home() {
 
   const menuItems = [
     { title: "خطوط", subtitle: "Fonts", href: "/fonts", color: "#E8C87A" },
-    { title: "فُرَش", subtitle: "Brushes", href: "/brushes", color: "#7ABCE8" },
-    { title: "المدوَّنة", subtitle: "Journal", href: "/journal", color: "#9BAF8A" },
+    { title: "فرش", subtitle: "Brushes", href: "/brushes", color: "#7ABCE8" },
+    { title: "المدوّنة", subtitle: "Journal", href: "/journal", color: "#9BAF8A" },
     { title: "عنّي", subtitle: "About", href: "/about", color: "#C4735A" },
   ];
 
