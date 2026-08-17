@@ -4,6 +4,7 @@ export interface SubBrush {
   angle: number;
   angleLabel: string;
   desc: string;
+  snapshot?: string;
   minWidthRatio?: number;
   maxWidthRatio?: number;
   smoothing?: number;
@@ -74,7 +75,8 @@ export const brushDataMap: Record<string, BrushDetailData> = {
         name: "قصبة نوريّة التوقيعية",
         angle: 68,
         angleLabel: "٦٨°",
-        desc: "القصبة المتوازنة الأصيلة لكافة أنواع الخط العربي",
+        desc: "القصبة المتوازنة الأصيلة لكافة أنواع الخط العربي مع انسيابية عالية",
+        snapshot: "/brush_snapshots/brush_6.png",
         minWidthRatio: 0.18,
         maxWidthRatio: 1.15,
         smoothing: 0.85,
@@ -86,6 +88,7 @@ export const brushDataMap: Record<string, BrushDetailData> = {
         angle: 72,
         angleLabel: "٧٢°",
         desc: "للعناوين الكبرى والتركيبات الفخمة ذات التباين العالي",
+        snapshot: "/brush_snapshots/brush_3.png",
         minWidthRatio: 0.12,
         maxWidthRatio: 1.25,
         smoothing: 0.88,
@@ -97,6 +100,7 @@ export const brushDataMap: Record<string, BrushDetailData> = {
         angle: 50,
         angleLabel: "٥٠°",
         desc: "للتواقيع والخطوط الحرة العفوية بحواف قاطعة حادة",
+        snapshot: "/brush_snapshots/brush_2.png",
         minWidthRatio: 0.22,
         maxWidthRatio: 1.05,
         smoothing: 0.75,
@@ -108,6 +112,7 @@ export const brushDataMap: Record<string, BrushDetailData> = {
         angle: 90,
         angleLabel: "٩٠°",
         desc: "للشعارات والهندسة الطباعية المعاصرة بزوايا قائمة صريحة",
+        snapshot: "/brush_snapshots/brush_4.png",
         minWidthRatio: 0.85,
         maxWidthRatio: 1.0,
         smoothing: 0.9,
@@ -119,6 +124,7 @@ export const brushDataMap: Record<string, BrushDetailData> = {
         angle: 60,
         angleLabel: "حبر معتق",
         desc: "للمخطوطات وتأثيرات الحبر العضوي المتسرب على الأطراف",
+        snapshot: "/brush_snapshots/brush_5.png",
         minWidthRatio: 0.3,
         maxWidthRatio: 1.2,
         smoothing: 0.8,
@@ -127,10 +133,11 @@ export const brushDataMap: Record<string, BrushDetailData> = {
       },
       {
         id: "tashkeel-nuqta",
-        name: "قلم التشكيل وميزان النقط",
+        name: "فرشاة التراكيب والزخرفة الحرفية",
         angle: 45,
-        angleLabel: "ختم معيني",
-        desc: "للنقاط المعينية وحركات الإعراب بدقة ميزان الخطاط",
+        angleLabel: "زخرفة وتشكيل",
+        desc: "للترويسات والزخارف الحرفية المعقدة وحركات التشكيل",
+        snapshot: "/brush_snapshots/brush_1.png",
         minWidthRatio: 0.4,
         maxWidthRatio: 0.8,
         smoothing: 0.5,

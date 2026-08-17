@@ -487,6 +487,15 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
                           {idx + 1}
                         </div>
                       </div>
+                      {sub.snapshot && (
+                        <div className={`h-7 w-full my-1 rounded-lg overflow-hidden flex items-center justify-center ${isSelected ? "bg-white/10" : "bg-black/5"}`}>
+                          <img
+                            src={sub.snapshot}
+                            alt={sub.name}
+                            className={`h-5 w-full object-contain ${isSelected ? "invert brightness-200" : "opacity-75"}`}
+                          />
+                        </div>
+                      )}
                       <div>
                         <div
                           className="font-bold text-xs sm:text-sm leading-snug truncate"
@@ -650,20 +659,31 @@ export default function BrushDetailClient({ brush, slug }: BrushDetailClientProp
                 <div
                   key={i}
                   onClick={() => setSelectedSubBrushId(sub.id)}
-                  className={`p-3.5 rounded-2xl flex items-center justify-between transition-all cursor-pointer ${
+                  className={`p-3.5 rounded-2xl flex items-center justify-between gap-3 transition-all cursor-pointer ${
                     currentSubBrush?.id === sub.id
                       ? "bg-[#1A1916] text-[#FAF9F6]"
                       : "bg-black/[0.03] hover:bg-black/[0.06] text-black"
                   }`}
                 >
-                  <div>
-                    <span className="font-bold text-sm block">{sub.name}</span>
-                    <span className={`text-xs ${currentSubBrush?.id === sub.id ? "text-[#FAF9F6]/70" : "text-black/55"}`}>
-                      {sub.desc}
-                    </span>
+                  <div className="flex items-center gap-3 min-w-0">
+                    {sub.snapshot && (
+                      <div className={`w-14 h-8 rounded-lg overflow-hidden shrink-0 flex items-center justify-center ${currentSubBrush?.id === sub.id ? "bg-white/10" : "bg-black/5"}`}>
+                        <img
+                          src={sub.snapshot}
+                          alt={sub.name}
+                          className={`h-6 w-full object-contain ${currentSubBrush?.id === sub.id ? "invert brightness-200" : "opacity-80"}`}
+                        />
+                      </div>
+                    )}
+                    <div className="truncate">
+                      <span className="font-bold text-sm block truncate">{sub.name}</span>
+                      <span className={`text-xs block truncate ${currentSubBrush?.id === sub.id ? "text-[#FAF9F6]/70" : "text-black/55"}`}>
+                        {sub.desc}
+                      </span>
+                    </div>
                   </div>
                   <span
-                    className={`px-2.5 py-1 rounded-full text-xs font-bold border ${
+                    className={`px-2.5 py-1 rounded-full text-xs font-bold border shrink-0 ${
                       currentSubBrush?.id === sub.id
                         ? "bg-[#FAF9F6]/15 text-[#E8C87A] border-[#FAF9F6]/20"
                         : "bg-white text-black/70 border-black/5"
