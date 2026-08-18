@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Footer() {
@@ -28,49 +29,52 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full pt-12 sm:pt-16 pb-8 sm:pb-12 px-4 sm:px-12 border-t border-black/10 bg-transparent transition-colors duration-400 mt-auto">
-      <div className="max-w-[1350px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-center md:items-end justify-between">
+    <footer className="w-full bg-[#EAE6DF] border-t border-black/10 mt-auto py-12 sm:py-16 px-6 sm:px-12 transition-colors">
+      <div className="max-w-7xl mx-auto flex flex-col items-center justify-between gap-10">
         
-        {/* Right Column: Newsletter Subscription (RTL Column 1) */}
-        <div className="flex flex-col gap-3 items-center md:items-start text-center md:text-right w-full">
-          <h3 className="font-serif text-base sm:text-lg font-bold text-black">
-            استقبل تحديثات في البريد الإلكتروني
-          </h3>
-          
-          <form onSubmit={handleSubscribe} className="flex items-center gap-2 w-full max-w-sm mt-1">
+        {/* Top: Newsletter / Stay Updated */}
+        <div className="flex flex-col items-center text-center max-w-md w-full">
+          <h4
+            style={{ fontFamily: "'Arsenica', serif" }}
+            className="text-2xl font-bold text-black mb-2"
+          >
+            اشترك في النشرة البريدية
+          </h4>
+          <p className="font-sans text-xs text-black/60 mb-6">
+            كن أول من يعلم عن إصدارات الخطوط الجديدة والفرش الحصرية والمقالات.
+          </p>
+
+          <form onSubmit={handleSubscribe} className="flex items-center w-full max-w-sm gap-2">
             <input
               type="email"
-              required
               placeholder="بريدك الإلكتروني..."
+              required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="bg-transparent border-b border-black/30 px-2 py-1.5 text-sm font-sans text-black placeholder:text-black/40 focus:outline-none focus:border-black flex-1 transition-colors"
+              className="flex-1 px-4 py-2.5 rounded-full bg-white/80 border border-black/15 text-sm text-black placeholder:text-black/40 focus:outline-none focus:border-black transition-colors"
+              dir="rtl"
             />
             <button
               type="submit"
-              className="font-sans text-sm font-bold text-black hover:opacity-60 transition-opacity border-b border-black pb-0.5 whitespace-nowrap"
+              className="px-5 py-2.5 rounded-full bg-black text-white font-sans text-xs font-bold hover:bg-black/80 transition-colors shrink-0"
             >
-              {subscribed ? "تم الاشتراك ✓" : "اشترك"}
+              {subscribed ? "تم الاشتراك!" : "اشتراك"}
             </button>
           </form>
-
-          <p className="font-sans text-xs text-black/60 leading-relaxed max-w-sm">
-            نستخدم بريدك الإلكتروني لإرسال تحديثات حول المدونة/الخطوط فقط.
-          </p>
         </div>
 
         {/* Center Column: Social Icons & Navigation Links */}
         <div className="flex flex-col items-center justify-center gap-4 sm:gap-5 text-center w-full">
           {/* Social Icons */}
-          <div className="flex items-center gap-5 text-black">
+          <div className="flex items-center gap-6 text-black">
             <a
               href="https://instagram.com/drrnour"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center"
+              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center p-1"
               title="انستغرام (@drrnour)"
             >
-              <img src="/ICONS/Instagram.png" alt="Instagram" className="w-5 h-5 object-contain" />
+              <Image src="/ICONS/Instagram.png" alt="Instagram" width={36} height={36} quality={100} className="w-7 h-7 sm:w-8 sm:h-8 object-contain icon-crisp" />
             </a>
             
             {/* Behance Monogram */}
@@ -78,7 +82,7 @@ export default function Footer() {
               href="https://behance.net"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-block font-sans text-base font-black tracking-tighter"
+              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-block font-sans text-xl sm:text-2xl font-black tracking-tighter"
               title="بيهانس"
             >
               Bē
@@ -86,10 +90,10 @@ export default function Footer() {
 
             <a
               href="mailto:nourmohamedanwar@gmail.com"
-              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center"
+              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center p-1"
               title="البريد الإلكتروني"
             >
-              <img src="/ICONS/Mail.png" alt="Email" className="w-5 h-5 object-contain" />
+              <Image src="/ICONS/Mail.png" alt="Email" width={36} height={36} quality={100} className="w-7 h-7 sm:w-8 sm:h-8 object-contain icon-crisp" />
             </a>
           </div>
 

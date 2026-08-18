@@ -175,3 +175,13 @@ html {
   width:  clamp(32px, 11vw, 128px);
   height: clamp(32px, 11vw, 128px);
 }
+
+/* Crisp rendering for icons and images */
+.icon-crisp,
+img.icon-crisp {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+

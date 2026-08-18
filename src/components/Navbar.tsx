@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { useTransitionNav } from "@/components/TransitionProvider";
 
 export default function Navbar() {
@@ -29,7 +30,7 @@ export default function Navbar() {
           className="inline-block select-none cursor-pointer"
           title="نور محمد"
         >
-          <img src="/logo.png" alt="نور محمد" className="h-10 sm:h-14 w-auto object-contain" />
+          <img src="/logo.png" alt="نور محمد" className="h-10 sm:h-14 w-auto object-contain icon-crisp" />
         </button>
 
         {/* Left: Navigation Links + Social Icons */}
@@ -66,19 +67,19 @@ export default function Navbar() {
           )}
 
           {/* Social Icons (Mail & Instagram) — Always visible on homepage, desktop-only on subpages */}
-          <div className={`flex items-center gap-4 ${!isHome ? "hidden md:flex" : "flex"}`}>
+          <div className={`flex items-center gap-5 ${!isHome ? "hidden md:flex" : "flex"}`}>
             {/* Mail Icon */}
             <a
               href="mailto:nourmohamedanwar@gmail.com"
-              className="relative block overflow-hidden h-[28px] w-[28px] group shrink-0"
+              className="relative block overflow-hidden h-[34px] w-[34px] group shrink-0"
               title="البريد الإلكتروني"
             >
-              <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[28px]">
-                <div className="h-[28px] w-[28px] flex items-center justify-center shrink-0">
-                  <img src="/ICONS/Mail.png" alt="Email" className="w-5 h-5 object-contain" />
+              <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[34px]">
+                <div className="h-[34px] w-[34px] flex items-center justify-center shrink-0">
+                  <Image src="/ICONS/Mail.png" alt="Email" width={32} height={32} quality={100} className="w-7 h-7 object-contain icon-crisp" priority />
                 </div>
-                <div className="h-[28px] w-[28px] flex items-center justify-center opacity-70 shrink-0">
-                  <img src="/ICONS/Mail.png" alt="Email" className="w-5 h-5 object-contain" />
+                <div className="h-[34px] w-[34px] flex items-center justify-center opacity-70 shrink-0">
+                  <Image src="/ICONS/Mail.png" alt="Email" width={32} height={32} quality={100} className="w-7 h-7 object-contain icon-crisp" priority />
                 </div>
               </div>
             </a>
@@ -88,15 +89,15 @@ export default function Navbar() {
               href="https://instagram.com/drrnour"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative block overflow-hidden h-[28px] w-[28px] group shrink-0"
+              className="relative block overflow-hidden h-[34px] w-[34px] group shrink-0"
               title="انستغرام (@drrnour)"
             >
-              <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[28px]">
-                <div className="h-[28px] w-[28px] flex items-center justify-center shrink-0">
-                  <img src="/ICONS/Instagram.png" alt="Instagram" className="w-5 h-5 object-contain" />
+              <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[34px]">
+                <div className="h-[34px] w-[34px] flex items-center justify-center shrink-0">
+                  <Image src="/ICONS/Instagram.png" alt="Instagram" width={32} height={32} quality={100} className="w-7 h-7 object-contain icon-crisp" priority />
                 </div>
-                <div className="h-[28px] w-[28px] flex items-center justify-center opacity-70 shrink-0">
-                  <img src="/ICONS/Instagram.png" alt="Instagram" className="w-5 h-5 object-contain" />
+                <div className="h-[34px] w-[34px] flex items-center justify-center opacity-70 shrink-0">
+                  <Image src="/ICONS/Instagram.png" alt="Instagram" width={32} height={32} quality={100} className="w-7 h-7 object-contain icon-crisp" priority />
                 </div>
               </div>
             </a>
@@ -162,22 +163,22 @@ export default function Navbar() {
 
             {/* Mobile Footer & Socials */}
             <div className="flex flex-col gap-6 items-center text-center">
-              <div className="flex items-center gap-6 w-full justify-center">
+              <div className="flex items-center gap-7 w-full justify-center">
                 <a
                   href="https://instagram.com/drrnour"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black hover:opacity-50 transition-opacity flex items-center justify-center"
+                  className="text-black hover:opacity-50 transition-opacity flex items-center justify-center p-1"
                   title="@drrnour"
                 >
-                  <img src="/ICONS/Instagram.png" alt="Instagram" className="w-6 h-6 object-contain" />
+                  <Image src="/ICONS/Instagram.png" alt="Instagram" width={36} height={36} quality={100} className="w-8 h-8 object-contain icon-crisp" />
                 </a>
                 <a
                   href="mailto:nourmohamedanwar@gmail.com"
-                  className="text-black hover:opacity-50 transition-opacity flex items-center justify-center"
+                  className="text-black hover:opacity-50 transition-opacity flex items-center justify-center p-1"
                   title="البريد الإلكتروني"
                 >
-                  <img src="/ICONS/Mail.png" alt="Email" className="w-6 h-6 object-contain" />
+                  <Image src="/ICONS/Mail.png" alt="Email" width={36} height={36} quality={100} className="w-8 h-8 object-contain icon-crisp" />
                 </a>
               </div>
 
