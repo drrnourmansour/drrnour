@@ -363,9 +363,9 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
               <div className="space-y-2.5">
                 <a
                   href={mailtoUrl}
-                  className="w-full bg-[#1A1916] text-[#FAF9F6] py-3.5 px-6 rounded-full font-bold font-sans text-sm sm:text-base flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-sm text-center"
+                  className="w-full bg-[#1A1916] text-[#FAF9F6] py-3.5 px-6 rounded-full font-bold font-sans text-sm sm:text-base flex items-center justify-center gap-2.5 hover:opacity-90 transition-opacity shadow-sm text-center"
                 >
-                  <Image src="/ICONS/Mail.png" alt="Email" width={20} height={20} quality={100} className="w-4 h-4 object-contain invert brightness-200 icon-crisp" />
+                  <Image src="/ICONS/Mail.png" alt="Email" width={26} height={26} quality={100} className="w-5 h-5 object-contain invert brightness-200 icon-crisp" />
                   <span>إرسال الطلب عبر البريد الإلكتروني</span>
                 </a>
 
@@ -376,7 +376,7 @@ export default function FontDetailClient({ font, slug }: FontDetailProps) {
                     rel="noopener noreferrer"
                     className="flex-1 border border-black/15 hover:bg-black/5 text-black py-2.5 px-4 rounded-full font-semibold font-sans text-xs flex items-center justify-center gap-2 transition-colors text-center"
                   >
-                    <Image src="/ICONS/Instagram.png" alt="Instagram" width={20} height={20} quality={100} className="w-4 h-4 object-contain icon-crisp" />
+                    <Image src="/ICONS/Instagram.png" alt="Instagram" width={24} height={24} quality={100} className="w-4.5 h-4.5 sm:w-5 sm:h-5 object-contain icon-crisp" />
                     <span>مراسلة عبر إنستغرام</span>
                   </a>
 

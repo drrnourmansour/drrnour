@@ -49,9 +49,8 @@ export default function Navbar() {
                       <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[28px]">
                         <span
                           style={{ fontFamily: "'Arsenica', serif" }}
-                          className={`block text-[1.1rem] h-[28px] leading-[28px] text-black text-center transition-colors ${
-                            isActive ? "font-bold border-b-[2px] border-black opacity-100" : "font-medium opacity-85"
-                          }`}
+                          className={`block text-[1.1rem] h-[28px] leading-[28px] text-black text-center transition-colors ${isActive ? "font-bold border-b-[2px] border-black opacity-100" : "font-medium opacity-85"
+                            }`}
                         >
                           {link.nameAr}
                         </span>
@@ -67,19 +66,19 @@ export default function Navbar() {
           )}
 
           {/* Social Icons (Mail & Instagram) — Always visible on homepage, desktop-only on subpages */}
-          <div className={`flex items-center gap-3.5 ${!isHome ? "hidden md:flex" : "flex"}`}>
+          <div className={`flex items-center gap-5 ${!isHome ? "hidden md:flex" : "flex"}`}>
             {/* Mail Icon */}
             <a
               href="mailto:nourmohamedanwar@gmail.com"
-              className="relative block overflow-hidden h-[22px] w-[22px] group shrink-0"
+              className="relative block overflow-hidden h-[34px] w-[34px] group shrink-0"
               title="البريد الإلكتروني"
             >
-              <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[22px]">
-                <div className="h-[22px] w-[22px] flex items-center justify-center shrink-0">
-                  <Image src="/ICONS/Mail.png" alt="Email" width={22} height={22} quality={100} className="w-[17px] h-[17px] object-contain icon-crisp" priority />
+              <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[34px]">
+                <div className="h-[34px] w-[34px] flex items-center justify-center shrink-0">
+                  <Image src="/ICONS/Mail.png" alt="Email" width={32} height={32} quality={100} className="w-7 h-7 object-contain icon-crisp" priority />
                 </div>
-                <div className="h-[22px] w-[22px] flex items-center justify-center opacity-70 shrink-0">
-                  <Image src="/ICONS/Mail.png" alt="Email" width={22} height={22} quality={100} className="w-[17px] h-[17px] object-contain icon-crisp" priority />
+                <div className="h-[34px] w-[34px] flex items-center justify-center opacity-70 shrink-0">
+                  <Image src="/ICONS/Mail.png" alt="Email" width={32} height={32} quality={100} className="w-7 h-7 object-contain icon-crisp" priority />
                 </div>
               </div>
             </a>
@@ -89,15 +88,15 @@ export default function Navbar() {
               href="https://instagram.com/drrnour"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative block overflow-hidden h-[22px] w-[22px] group shrink-0"
+              className="relative block overflow-hidden h-[34px] w-[34px] group shrink-0"
               title="انستغرام (@drrnour)"
             >
-              <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[22px]">
-                <div className="h-[22px] w-[22px] flex items-center justify-center shrink-0">
-                  <Image src="/ICONS/Instagram.png" alt="Instagram" width={22} height={22} quality={100} className="w-[17px] h-[17px] object-contain icon-crisp" priority />
+              <div className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[34px]">
+                <div className="h-[34px] w-[34px] flex items-center justify-center shrink-0">
+                  <Image src="/ICONS/Instagram.png" alt="Instagram" width={32} height={32} quality={100} className="w-7 h-7 object-contain icon-crisp" priority />
                 </div>
-                <div className="h-[22px] w-[22px] flex items-center justify-center opacity-70 shrink-0">
-                  <Image src="/ICONS/Instagram.png" alt="Instagram" width={22} height={22} quality={100} className="w-[17px] h-[17px] object-contain icon-crisp" priority />
+                <div className="h-[34px] w-[34px] flex items-center justify-center opacity-70 shrink-0">
+                  <Image src="/ICONS/Instagram.png" alt="Instagram" width={32} height={32} quality={100} className="w-7 h-7 object-contain icon-crisp" priority />
                 </div>
               </div>
             </a>
@@ -111,9 +110,9 @@ export default function Navbar() {
               aria-label="القائمة"
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6 stroke-[2]" />
+                <X className="w-7 h-7 stroke-[2]" />
               ) : (
-                <Menu className="w-6 h-6 stroke-[2]" />
+                <Menu className="w-7 h-7 stroke-[2]" />
               )}
             </button>
           )}
@@ -146,9 +145,8 @@ export default function Navbar() {
                     {/* Arabic — right side (first child in RTL flex) */}
                     <span
                       style={{ fontFamily: "'Arsenica', serif" }}
-                      className={`text-4xl font-bold text-black transition-colors ${
-                        isActive ? "text-black border-b-2 border-black" : ""
-                      }`}
+                      className={`text-4xl font-bold text-black transition-colors ${isActive ? "text-black border-b-2 border-black" : ""
+                        }`}
                     >
                       {link.nameAr}
                     </span>
@@ -163,22 +161,22 @@ export default function Navbar() {
 
             {/* Mobile Footer & Socials */}
             <div className="flex flex-col gap-6 items-center text-center">
-              <div className="flex items-center gap-5 w-full justify-center">
+              <div className="flex items-center gap-7 w-full justify-center">
                 <a
                   href="https://instagram.com/drrnour"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black hover:opacity-50 transition-opacity flex items-center justify-center"
+                  className="text-black hover:opacity-50 transition-opacity flex items-center justify-center p-1"
                   title="@drrnour"
                 >
-                  <Image src="/ICONS/Instagram.png" alt="Instagram" width={24} height={24} quality={100} className="w-5 h-5 object-contain icon-crisp" />
+                  <Image src="/ICONS/Instagram.png" alt="Instagram" width={36} height={36} quality={100} className="w-8 h-8 object-contain icon-crisp" />
                 </a>
                 <a
                   href="mailto:nourmohamedanwar@gmail.com"
-                  className="text-black hover:opacity-50 transition-opacity flex items-center justify-center"
+                  className="text-black hover:opacity-50 transition-opacity flex items-center justify-center p-1"
                   title="البريد الإلكتروني"
                 >
-                  <Image src="/ICONS/Mail.png" alt="Email" width={24} height={24} quality={100} className="w-5 h-5 object-contain icon-crisp" />
+                  <Image src="/ICONS/Mail.png" alt="Email" width={36} height={36} quality={100} className="w-8 h-8 object-contain icon-crisp" />
                 </a>
               </div>
 

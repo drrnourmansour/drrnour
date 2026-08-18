@@ -31,7 +31,7 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#EAE6DF] border-t border-black/10 mt-auto py-12 sm:py-16 px-6 sm:px-12 transition-colors">
       <div className="max-w-7xl mx-auto flex flex-col items-center justify-between gap-10">
-        
+
         {/* Top: Newsletter / Stay Updated */}
         <div className="flex flex-col items-center text-center max-w-md w-full">
           <h4
@@ -66,23 +66,23 @@ export default function Footer() {
         {/* Center Column: Social Icons & Navigation Links */}
         <div className="flex flex-col items-center justify-center gap-4 sm:gap-5 text-center w-full">
           {/* Social Icons */}
-          <div className="flex items-center gap-4 text-black">
+          <div className="flex items-center gap-6 text-black">
             <a
               href="https://instagram.com/drrnour"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-0.5 inline-flex items-center justify-center"
+              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center p-1"
               title="انستغرام (@drrnour)"
             >
-              <Image src="/ICONS/Instagram.png" alt="Instagram" width={22} height={22} quality={100} className="w-[18px] h-[18px] object-contain icon-crisp" />
+              <Image src="/ICONS/Instagram.png" alt="Instagram" width={36} height={36} quality={100} className="w-7 h-7 sm:w-8 sm:h-8 object-contain icon-crisp" />
             </a>
-            
+
             {/* Behance Monogram */}
             <a
               href="https://behance.net"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-0.5 inline-block font-sans text-sm font-black tracking-tighter"
+              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-block font-sans text-xl sm:text-2xl font-black tracking-tighter"
               title="بيهانس"
             >
               Bē
@@ -90,10 +90,10 @@ export default function Footer() {
 
             <a
               href="mailto:nourmohamedanwar@gmail.com"
-              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-0.5 inline-flex items-center justify-center"
+              className="hover:opacity-60 transition-all duration-300 hover:-translate-y-1 inline-flex items-center justify-center p-1"
               title="البريد الإلكتروني"
             >
-              <Image src="/ICONS/Mail.png" alt="Email" width={22} height={22} quality={100} className="w-[18px] h-[18px] object-contain icon-crisp" />
+              <Image src="/ICONS/Mail.png" alt="Email" width={36} height={36} quality={100} className="w-7 h-7 sm:w-8 sm:h-8 object-contain icon-crisp" />
             </a>
           </div>
 
