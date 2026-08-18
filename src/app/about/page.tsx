@@ -202,15 +202,15 @@ export default function AboutPage() {
             href="https://instagram.com/drrnour"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#FAF9F6] text-[#1A1916] font-sans text-sm font-extrabold px-6 py-3 rounded-full hover:bg-[#FFE500] transition-colors flex items-center gap-2.5"
+            className="bg-[#FAF9F6] text-[#1A1916] font-sans text-sm font-extrabold px-6 py-3 rounded-full hover:bg-[#FFE500] transition-colors flex items-center gap-2"
           >
-            <Image src="/ICONS/Instagram.png" alt="Instagram" width={28} height={28} quality={100} className="w-5 h-5 sm:w-6 sm:h-6 object-contain icon-crisp" /> @drrnour
+            <Image src="/ICONS/Instagram.png" alt="Instagram" width={20} height={20} quality={100} className="w-3.5 h-3.5 sm:w-4 sm:h-4 object-contain icon-crisp" /> @drrnour
           </a>
           <a
             href="mailto:nourmohamedanwar@gmail.com"
-            className="border border-[#FAF9F6]/30 text-[#FAF9F6] font-sans text-sm font-bold px-6 py-3 rounded-full hover:bg-[#FAF9F6]/10 transition-colors flex items-center gap-2.5"
+            className="border border-[#FAF9F6]/30 text-[#FAF9F6] font-sans text-sm font-bold px-6 py-3 rounded-full hover:bg-[#FAF9F6]/10 transition-colors flex items-center gap-2"
           >
-            <Image src="/ICONS/Mail.png" alt="Email" width={28} height={28} quality={100} className="w-5 h-5 sm:w-6 sm:h-6 object-contain invert brightness-200 icon-crisp" /> راسلني
+            <Image src="/ICONS/Mail.png" alt="Email" width={20} height={20} quality={100} className="w-3.5 h-3.5 sm:w-4 sm:h-4 object-contain invert brightness-200 icon-crisp" /> راسلني
           </a>
         </div>
       </section>
