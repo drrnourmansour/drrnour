@@ -27,7 +27,7 @@ const fontData: Record<string, FontInfo> = {
     nameAr: "خط نور",
     nameEn: "Khatt Nour",
     category: "كوفي حديث للعناوين",
-    description: "الخط التوقيعي للمصمم نور محمد؛ يستند إلى التراث الكوفي بأسلوب حديث ورشيق.",
+    description: "الخط التوقيعي للمصمم نور منصور؛ يستند إلى التراث الكوفي بأسلوب حديث ورشيق.",
     bgClass: "#96B5A4",
   },
   majd: {
@@ -68,7 +68,7 @@ export async function generateMetadata({
   }
 
   const title = `خط ${font.nameAr} (${font.nameEn}) — ${font.category}`;
-  const description = `${font.description} تصفّح واختبر أوزان وتراخيص عائلة خط ${font.nameAr} من تصميم نور محمد.`;
+  const description = `${font.description} تصفّح واختبر أوزان وتراخيص عائلة خط ${font.nameAr} من تصميم نور منصور.`;
 
   return {
     title,
@@ -79,7 +79,7 @@ export async function generateMetadata({
       `خط ${font.nameAr}`,
       font.category,
       "خطوط عربية",
-      "نور محمد",
+      "نور منصور",
       "Arabic Font",
       "Typeface",
     ],
@@ -87,24 +87,24 @@ export async function generateMetadata({
       canonical: `/fonts/${params.slug}`,
     },
     openGraph: {
-      title: `خط ${font.nameAr} (${font.nameEn}) | نور محمد`,
+      title: `خط ${font.nameAr} (${font.nameEn}) | نور منصور`,
       description,
       url: `https://drrnour.com/fonts/${params.slug}`,
       type: "website",
       locale: "ar_SA",
-      siteName: "مسبك نور محمد للخطوط",
+      siteName: "مسبك نور منصور للخطوط",
       images: [
         {
           url: `https://drrnour.com/og-font-${params.slug}.jpg`,
           width: 1200,
           height: 630,
-          alt: `خط ${font.nameAr} — نور محمد`,
+          alt: `خط ${font.nameAr} — نور منصور`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | نور محمد`,
+      title: `${title} | نور منصور`,
       description,
       creator: "@drrnour",
     },
@@ -129,7 +129,7 @@ export default function FontDetailLayout({
         category: font.category,
         brand: {
           "@type": "Brand",
-          name: "نور محمد للخطوط الرقمية",
+          name: "نور منصور للخطوط الرقمية",
         },
         offers: {
           "@type": "AggregateOffer",

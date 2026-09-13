@@ -26,100 +26,22 @@ interface FontItem {
 
 const fontsList: FontItem[] = [
   {
-    id: "talheen",
-    title: "تلحين",
-    titleEn: "Talheen",
-    fontFamily: "'Aref Ruqaa', serif",
+    id: "nouriyya",
+    title: "نوريّة",
+    titleEn: "Nouriyya",
+    fontFamily: "'Arsenica', serif",
     bg: "#E8C87A",
     textColor: "dark",
-    stylesAr: "٣ أنماط",
-    stylesEn: "3 styles",
-    category: "يدوي",
-    specimenAr: "أبجد هوّز حطّي كلمن",
-    specimenEn: "The quick brown fox",
-  },
-  {
-    id: "waraqa",
-    title: "ورقة",
-    titleEn: "Waraqa",
-    fontFamily: "'Cairo', sans-serif",
-    bg: "#D4C5B8",
-    textColor: "dark",
-    stylesAr: "٦ أنماط، متغير",
-    stylesEn: "6 styles, Variable",
-    category: "هندسي",
-    specimenAr: "أبجد هوّز حطّي كلمن",
-    specimenEn: "The quick brown fox",
-  },
-  {
-    id: "khatt-nour",
-    title: "خط نور",
-    titleEn: "Khatt Nour",
-    fontFamily: "'Reem Kufi', sans-serif",
-    bg: "#96B5A4",
-    textColor: "dark",
-    stylesAr: "٦ أنماط، متغير",
-    stylesEn: "6 styles, Variable",
-    category: "كوفي",
-    specimenAr: "أبجد هوّز حطّي كلمن",
-    specimenEn: "The quick brown fox",
-  },
-  {
-    id: "majd",
-    title: "مجد",
-    titleEn: "Majd",
-    fontFamily: "'Tajawal', sans-serif",
-    bg: "#D4907A",
-    textColor: "dark",
-    stylesAr: "٧ أنماط، متغير",
-    stylesEn: "7 styles, Variable",
-    category: "هندسي",
-    specimenAr: "أبجد هوّز حطّي كلمن",
-    specimenEn: "The quick brown fox",
-  },
-  {
-    id: "rawaa",
-    title: "روعة",
-    titleEn: "Rawaa",
-    fontFamily: "'Readex Pro', sans-serif",
-    bg: "#C8BF8A",
-    textColor: "dark",
-    stylesAr: "٨ أنماط",
-    stylesEn: "8 styles",
-    category: "يدوي",
-    specimenAr: "أبجد هوّز حطّي كلمن",
-    specimenEn: "The quick brown fox",
-  },
-  {
-    id: "naskh-modern",
-    title: "نسخ",
-    titleEn: "Naskh",
-    fontFamily: "'Amiri', serif",
-    bg: "#1A1916",
-    textColor: "light",
-    stylesAr: "٤ أنماط",
-    stylesEn: "4 styles",
-    category: "نسخي",
-    specimenAr: "أبجد هوّز حطّي كلمن",
-    specimenEn: "The quick brown fox",
-  },
-  {
-    id: "zuhal",
-    title: "زحل",
-    titleEn: "Zuhal",
-    fontFamily: "'Tajawal', sans-serif",
-    bg: "#3A3D8A",
-    textColor: "light",
-    stylesAr: "٦٣ نمط، متغير",
-    stylesEn: "63 styles, Variable",
-    category: "هندسي",
-    specimenAr: "أبجد هوّز حطّي كلمن",
-    specimenEn: "The quick brown fox",
+    stylesAr: "متعدد الأوزان، متغيّر",
+    stylesEn: "Variable Font",
+    category: "الكل",
+    specimenAr: "أبجد هوّز حطّي كلمن سعفص قرشت",
+    specimenEn: "The quick brown fox jumps over the lazy dog",
     soon: true,
   },
 ];
 
-const allCategories = ["الكل", "يدوي", "هندسي", "كوفي", "نسخي"];
+const allCategories = ["الكل"];
 
 /* ─────────────────────────────────────────
    SCROLL-REVEAL WRAPPER
@@ -154,31 +76,8 @@ function GridCard({ font }: { font: FontItem }) {
   const inkMid = dark ? "rgba(26,25,22,0.55)" : "rgba(250,249,246,0.55)";
   const border = dark ? "rgba(26,25,22,0.25)" : "rgba(250,249,246,0.25)";
 
-  return (
-    <Link
-      href={font.soon ? "#" : `/fonts/${font.id}`}
-      className="relative rounded-[24px] sm:rounded-[40px] flex flex-col justify-between overflow-hidden group"
-      style={{
-        backgroundColor: font.bg,
-        minHeight: "clamp(300px, 40vw, 480px)",
-        padding: "clamp(16px, 3vw, 44px)",
-      }}
-      aria-disabled={font.soon}
-      tabIndex={font.soon ? -1 : 0}
-    >
-      {/* Soon overlay */}
-      {font.soon && (
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center backdrop-blur-[2px]"
-          style={{ backgroundColor: `${font.bg}CC` }}>
-          <span
-            className="px-5 py-2 rounded-full text-sm font-bold tracking-widest border"
-            style={{ color: ink, borderColor: border, fontFamily: "'Bricolage Grotesque', sans-serif" }}
-          >
-            قريبا · Soon
-          </span>
-        </div>
-      )}
-
+  const content = (
+    <>
       {/* Top row — badges */}
       <div className="flex items-start justify-between w-full z-10">
         <span
@@ -191,6 +90,22 @@ function GridCard({ font }: { font: FontItem }) {
         >
           {font.stylesEn}
         </span>
+
+        {font.soon && (
+          <span
+            className="px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-bold border tracking-wider flex items-center gap-1.5 shadow-xs transition-transform duration-300 group-hover:scale-105 select-none"
+            style={{
+              color: ink,
+              borderColor: border,
+              backgroundColor: dark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.06)",
+              fontFamily: "'Bricolage Grotesque', sans-serif",
+            }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+            قريباً · Soon
+          </span>
+        )}
+
         <span
           className="px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold border tracking-wide"
           style={{
@@ -203,26 +118,24 @@ function GridCard({ font }: { font: FontItem }) {
         </span>
       </div>
 
-      {/* Center — HUGE font name rendered in the actual typeface */}
+      {/* Center — HUGE font name rendered in the actual typeface with animation */}
       <div className="flex-1 flex items-center justify-center py-4">
         <h2
           style={{
             fontFamily: font.fontFamily,
             color: ink,
-            fontSize: "clamp(3rem, 9vw, 7rem)",
+            fontSize: "clamp(3.5rem, 10vw, 7.5rem)",
             lineHeight: 1,
             fontWeight: 700,
             textAlign: "center",
-            transition: "transform 0.3s ease",
           }}
-          className="group-hover:scale-105 transition-transform duration-300"
+          className="group-hover:scale-105 transition-transform duration-300 select-none"
         >
           {font.title}
         </h2>
       </div>
 
       {/* Bottom — specimen lines */}
-      {/* Bottom — specimen + inline arrow */}
       <div className="hidden sm:flex flex-col gap-1">
         <p
           style={{
@@ -249,18 +162,44 @@ function GridCard({ font }: { font: FontItem }) {
           >
             {font.specimenEn}
           </p>
-          {!font.soon && (
-            <div
-              className="w-7 h-7 rounded-full border flex items-center justify-center shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-              style={{ borderColor: border, color: ink }}
-            >
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          )}
+          <div
+            className="w-7 h-7 rounded-full border flex items-center justify-center shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110"
+            style={{ borderColor: border, color: ink }}
+          >
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
         </div>
       </div>
+    </>
+  );
+
+  const cardStyle = {
+    backgroundColor: font.bg,
+    minHeight: "clamp(300px, 40vw, 480px)",
+    padding: "clamp(16px, 3vw, 44px)",
+  };
+
+  if (font.soon) {
+    return (
+      <div
+        onClick={(e) => e.preventDefault()}
+        className="relative rounded-[24px] sm:rounded-[40px] flex flex-col justify-between overflow-hidden group cursor-pointer select-none transition-all duration-300 hover:shadow-2xl"
+        style={cardStyle}
+      >
+        {content}
+      </div>
+    );
+  }
+
+  return (
+    <Link
+      href={`/fonts/${font.id}`}
+      className="relative rounded-[24px] sm:rounded-[40px] flex flex-col justify-between overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-2xl"
+      style={cardStyle}
+    >
+      {content}
     </Link>
   );
 }
@@ -274,33 +213,32 @@ function ListCard({ font }: { font: FontItem }) {
   const inkMid = dark ? "rgba(26,25,22,0.5)" : "rgba(250,249,246,0.5)";
   const border = dark ? "rgba(26,25,22,0.2)" : "rgba(250,249,246,0.2)";
 
-  return (
-    <Link
-      href={font.soon ? "#" : `/fonts/${font.id}`}
-      className="relative flex items-center justify-between gap-4 rounded-[20px] sm:rounded-[28px] group overflow-hidden"
-      style={{
-        backgroundColor: font.bg,
-        padding: "clamp(14px, 2.5vw, 28px) clamp(18px, 3.5vw, 44px)",
-      }}
-    >
-      {font.soon && (
-        <div className="absolute inset-0 z-20 flex items-center justify-center backdrop-blur-[2px]"
-          style={{ backgroundColor: `${font.bg}BB` }}>
-          <span className="px-4 py-1.5 rounded-full text-xs font-bold border tracking-widest"
-            style={{ color: ink, borderColor: border, fontFamily: "'Bricolage Grotesque', sans-serif" }}>
-            قريبا · Soon
-          </span>
-        </div>
-      )}
-
+  const content = (
+    <>
       {/* Font name + specimen */}
       <div className="flex flex-col gap-1 flex-1 min-w-0">
-        <h2
-          style={{ fontFamily: font.fontFamily, color: ink, fontWeight: 700 }}
-          className="text-3xl sm:text-5xl leading-none truncate"
-        >
-          {font.title}
-        </h2>
+        <div className="flex items-center gap-3 flex-wrap">
+          <h2
+            style={{ fontFamily: font.fontFamily, color: ink, fontWeight: 700 }}
+            className="text-3xl sm:text-5xl leading-none truncate group-hover:scale-[1.02] origin-right transition-transform duration-300"
+          >
+            {font.title}
+          </h2>
+          {font.soon && (
+            <span
+              className="px-3 py-1 rounded-full text-xs font-bold border tracking-wider flex items-center gap-1.5 shadow-xs transition-transform duration-300 group-hover:scale-105 select-none shrink-0"
+              style={{
+                color: ink,
+                borderColor: border,
+                backgroundColor: dark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.06)",
+                fontFamily: "'Bricolage Grotesque', sans-serif",
+              }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+              قريباً · Soon
+            </span>
+          )}
+        </div>
         <p
           style={{
             fontFamily: font.fontFamily,
@@ -322,17 +260,42 @@ function ListCard({ font }: { font: FontItem }) {
           <span style={{ color: inkMid, fontFamily: "'Bricolage Grotesque', sans-serif" }}
             className="text-xs font-medium">{font.stylesEn}</span>
         </div>
-        {!font.soon && (
-          <div
-            className="w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-200 group-hover:scale-110"
-            style={{ borderColor: border, color: ink }}
-          >
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
-        )}
+        <div
+          className="w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-200 group-hover:scale-110"
+          style={{ borderColor: border, color: ink }}
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
       </div>
+    </>
+  );
+
+  const cardStyle = {
+    backgroundColor: font.bg,
+    padding: "clamp(14px, 2.5vw, 28px) clamp(18px, 3.5vw, 44px)",
+  };
+
+  if (font.soon) {
+    return (
+      <div
+        onClick={(e) => e.preventDefault()}
+        className="relative flex items-center justify-between gap-4 rounded-[20px] sm:rounded-[28px] group overflow-hidden cursor-pointer select-none transition-all duration-300"
+        style={cardStyle}
+      >
+        {content}
+      </div>
+    );
+  }
+
+  return (
+    <Link
+      href={`/fonts/${font.id}`}
+      className="relative flex items-center justify-between gap-4 rounded-[20px] sm:rounded-[28px] group overflow-hidden cursor-pointer"
+      style={cardStyle}
+    >
+      {content}
     </Link>
   );
 }
@@ -415,9 +378,9 @@ export default function FontsPage() {
       <section className="flex flex-col items-center text-center mb-8 sm:mb-10">
 
         {/* Animated banner */}
-        <div className="mb-6 sm:mb-10 w-full">
+        {/* <div className="mb-6 sm:mb-10 w-full">
           <LottieBanner />
-        </div>
+        </div> */}
 
         {/* Titles */}
         <h1 className="font-serif text-3xl sm:text-6xl font-extrabold text-black mb-3 sm:mb-4 leading-normal sm:leading-tight">
@@ -433,8 +396,7 @@ export default function FontsPage() {
           className="text-sm text-black/40 font-medium mb-8 sm:mb-10"
           style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
         >
-          {available.length} خط متاح
-          {activeCategory !== "الكل" && ` في فئة "${activeCategory}"`}
+          {available.length > 0 ? `${available.length} خط متاح` : "قريباً — خط نوريّة"}
         </p>
 
         {/* Controls bar */}
@@ -495,7 +457,7 @@ export default function FontsPage() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.2 }}
-          className={isListView ? "flex flex-col gap-3 sm:gap-4" : "grid grid-cols-2 gap-3 sm:gap-6"}
+          className={isListView ? "flex flex-col gap-3 sm:gap-4 max-w-2xl mx-auto w-full" : filtered.length === 1 ? "max-w-2xl mx-auto w-full" : "grid grid-cols-2 gap-3 sm:gap-6"}
         >
           {filtered.length === 0 ? (
             <div className="col-span-2 text-center py-24 text-black/40 font-sans">

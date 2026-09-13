@@ -9,8 +9,8 @@ import TransitionProvider from "@/components/TransitionProvider";
 export const metadata: Metadata = {
   metadataBase: new URL("https://drrnour.com"),
   title: {
-    default: "نور محمد | مصمم وأخصائي خطوط عربية ولاتينية",
-    template: "%s | نور محمد",
+    default: "نور منصور | مصمم وأخصائي خطوط عربية ولاتينية",
+    template: "%s | نور منصور",
   },
   icons: {
     icon: "/favicon.jpeg",
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     apple: "/favicon.jpeg",
   },
   description:
-    "موقع ومسبك نور محمد المتخصص في تصميم ونحت الخطوط العربية واللاتينية المعاصرة والخطوط المتغيرة والهندسة الطباعية الرقمية.",
+    "موقع ومسبك نور منصور المتخصص في تصميم ونحت الخطوط العربية واللاتينية المعاصرة والخطوط المتغيرة والهندسة الطباعية الرقمية.",
   keywords: [
-    "نور محمد",
+    "نور منصور",
     "خطوط عربية",
     "خطوط لاتينية",
     "مسبك خطوط",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "Type Foundry",
     "Variable Fonts",
     "Typography",
-    "Nour Mohamed",
+    "Nour Mansour",
     "خط تلحين",
     "خط ورقة",
     "خط نور",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     "خط روعة",
     "خط نسخ",
   ],
-  authors: [{ name: "نور محمد", url: "https://drrnour.com" }],
-  creator: "نور محمد",
-  publisher: "مسبك نور محمد للخطوط الرقمية",
+  authors: [{ name: "نور منصور", url: "https://drrnour.com" }],
+  creator: "نور منصور",
+  publisher: "مسبك نور منصور للخطوط الرقمية",
   formatDetection: {
     email: false,
     address: false,
@@ -50,11 +50,11 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "نور محمد | مصمم وأخصائي خطوط عربية ولاتينية",
+    title: "نور منصور | مصمم وأخصائي خطوط عربية ولاتينية",
     description:
-      "مسبك خطوط عربية ولاتينية معاصرة بتصميم مبتكر وهندسة طباعية رقمية فائقة الجودة بقلم المصمم نور محمد.",
+      "مسبك خطوط عربية ولاتينية معاصرة بتصميم مبتكر وهندسة طباعية رقمية فائقة الجودة بقلم المصمم نور منصور.",
     url: "https://drrnour.com",
-    siteName: "نور محمد للخطوط الرقمية",
+    siteName: "نور منصور للخطوط الرقمية",
     locale: "ar_SA",
     type: "website",
     images: [
@@ -62,14 +62,14 @@ export const metadata: Metadata = {
         url: "https://drrnour.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "نور محمد — خطوط عربية ولاتينية",
+        alt: "نور منصور — خطوط عربية ولاتينية",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "نور محمد | مصمم وأخصائي خطوط عربية ولاتينية",
-    description: "مسبك خطوط عربية ولاتينية معاصرة وهندسة طباعية رقمية من تصميم نور محمد.",
+    title: "نور منصور | مصمم وأخصائي خطوط عربية ولاتينية",
+    description: "مسبك خطوط عربية ولاتينية معاصرة وهندسة طباعية رقمية من تصميم نور منصور.",
     creator: "@drrnour",
     images: ["https://drrnour.com/og-image.jpg"],
   },
@@ -92,8 +92,8 @@ const jsonLd = {
     {
       "@type": "Person",
       "@id": "https://drrnour.com/#person",
-      name: "نور محمد",
-      alternateName: "Nour Mohamed",
+      name: "نور منصور",
+      alternateName: "Nour Mansour",
       jobTitle: "مصمم خطوط وأخصائي هندسة طباعية",
       url: "https://drrnour.com",
       sameAs: [
@@ -112,8 +112,8 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://drrnour.com/#website",
       url: "https://drrnour.com",
-      name: "نور محمد | مصمم خطوط عربية ولاتينية",
-      description: "مسبك خطوط رقمية عربية ولاتينية معاصرة من تصميم نور محمد.",
+      name: "نور منصور | مصمم خطوط عربية ولاتينية",
+      description: "مسبك خطوط رقمية عربية ولاتينية معاصرة من تصميم نور منصور.",
       inLanguage: "ar",
       publisher: {
         "@id": "https://drrnour.com/#person",
@@ -122,7 +122,7 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://drrnour.com/#organization",
-      name: "مسبك نور محمد للخطوط الرقمية",
+      name: "مسبك نور منصور للخطوط الرقمية",
       url: "https://drrnour.com",
       logo: "https://drrnour.com/logo.png",
       founder: {

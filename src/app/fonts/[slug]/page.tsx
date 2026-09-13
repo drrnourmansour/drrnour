@@ -54,7 +54,7 @@ const fontData: Record<string, FontDetail> = {
     category: "كوفي حديث للعناوين",
     stylesAr: "٦ أنماط، متغير",
     stylesEn: "6 Styles, Variable",
-    description: "الخط التوقيعي للمصمم نور محمد؛ يستند إلى التراث الكوفي بأسلوب حديث ورشيق.",
+    description: "الخط التوقيعي للمصمم نور منصور؛ يستند إلى التراث الكوفي بأسلوب حديث ورشيق.",
     bgClass: "bg-[#96B5A4]",
     fontFamily: "'Reem Kufi', sans-serif",
     weights: [

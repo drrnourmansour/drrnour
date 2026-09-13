@@ -20,7 +20,7 @@ export default function Home() {
       className="min-h-screen w-full flex flex-col items-center justify-center relative px-6 transition-colors duration-500 ease-out"
       animate={{ backgroundColor: bgColor }}
     >
-      <h1 className="sr-only">نور محمد — مسبك خطوط عربية ولاتينية وهندسة طباعية رقمية</h1>
+      <h1 className="sr-only">نور منصور — مسبك خطوط عربية ولاتينية وهندسة طباعية رقمية</h1>
       <div className="flex flex-col items-center justify-center gap-7 sm:gap-9 text-center py-12">
         {menuItems.map((item) => (
           <motion.div

@@ -6,9 +6,14 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Sparkles, Menu, LayoutGrid } from "lucide-react";
 import { brushDataMap, BrushDetailData } from "./brushData";
 
-const brushPacksList: BrushDetailData[] = Object.values(brushDataMap);
+const brushPacksList: BrushDetailData[] = [
+  {
+    ...brushDataMap["nour-signature"],
+    soon: true,
+  },
+];
 
-const allCategories = ["الكل", "خط عربي", "محاكاة قصب", "هندسي", "حبر وتعتيق", "تشكيل وزخرفة"];
+const allCategories = ["الكل"];
 
 /* ─────────────────────────────────────────
    SCROLL REVEAL WRAPPER
@@ -37,37 +42,8 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
   const inkMid = dark ? "rgba(26,25,22,0.6)" : "rgba(250,249,246,0.6)";
   const border = dark ? "rgba(26,25,22,0.22)" : "rgba(250,249,246,0.22)";
 
-  return (
-    <Link
-      href={pack.soon ? "#" : `/brushes/${pack.id}`}
-      className="relative rounded-[24px] sm:rounded-[40px] flex flex-col justify-between overflow-hidden group shadow-xs transition-all duration-300 block"
-      style={{
-        backgroundColor: pack.bg,
-        minHeight: "clamp(320px, 42vw, 490px)",
-        padding: "clamp(18px, 3vw, 44px)",
-      }}
-      aria-disabled={pack.soon}
-      tabIndex={pack.soon ? -1 : 0}
-    >
-      {/* Soon Overlay */}
-      {pack.soon && (
-        <div
-          className="absolute inset-0 z-20 flex flex-col items-center justify-center backdrop-blur-[2px]"
-          style={{ backgroundColor: `${pack.bg}CC` }}
-        >
-          <span
-            className="px-5 py-2 rounded-full text-sm font-bold tracking-widest border"
-            style={{
-              color: ink,
-              borderColor: border,
-              fontFamily: "'Bricolage Grotesque', sans-serif",
-            }}
-          >
-            قريبا · Soon
-          </span>
-        </div>
-      )}
-
+  const content = (
+    <>
       {/* Top Row Badges */}
       <div className="flex items-start justify-between w-full z-10 gap-2">
         <span
@@ -80,6 +56,22 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
         >
           {pack.fileFormat} {pack.fileSize ? `• ${pack.fileSize}` : ""}
         </span>
+
+        {pack.soon && (
+          <span
+            className="px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-bold border tracking-wider flex items-center gap-1.5 shadow-xs transition-transform duration-300 group-hover:scale-105 select-none"
+            style={{
+              color: ink,
+              borderColor: border,
+              backgroundColor: dark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.06)",
+              fontFamily: "'Bricolage Grotesque', sans-serif",
+            }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+            قريباً · Soon
+          </span>
+        )}
+
         <span
           className="px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold border tracking-wide"
           style={{
@@ -102,7 +94,7 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
             lineHeight: 1.25,
             fontWeight: 800,
           }}
-          className="group-hover:scale-105 transition-transform duration-300 mb-2 sm:mb-3"
+          className="group-hover:scale-105 transition-transform duration-300 mb-2 sm:mb-3 select-none"
         >
           {pack.nameAr}
         </h2>
@@ -111,7 +103,7 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
             fontFamily: "'Bricolage Grotesque', sans-serif",
             color: inkMid,
           }}
-          className="text-xs sm:text-sm font-semibold tracking-wider uppercase"
+          className="text-xs sm:text-sm font-semibold tracking-wider uppercase select-none"
         >
           {pack.nameEn}
         </span>
@@ -146,23 +138,49 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
             {pack.specimenEn}
           </p>
 
-          {!pack.soon && (
-            <div
-              className="px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all duration-200 shrink-0 shadow-xs group-hover:scale-105"
-              style={{
-                backgroundColor: ink,
-                color: pack.bg,
-                fontFamily: "'Bricolage Grotesque', sans-serif",
-              }}
-            >
-              <span>تجربة الفرشاة</span>
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          )}
+          <div
+            className="px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all duration-200 shrink-0 shadow-xs group-hover:scale-105"
+            style={{
+              backgroundColor: ink,
+              color: pack.bg,
+              fontFamily: "'Bricolage Grotesque', sans-serif",
+            }}
+          >
+            <span>{pack.soon ? "قريباً" : "تجربة الفرشاة"}</span>
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
         </div>
       </div>
+    </>
+  );
+
+  const cardStyle = {
+    backgroundColor: pack.bg,
+    minHeight: "clamp(320px, 42vw, 490px)",
+    padding: "clamp(18px, 3vw, 44px)",
+  };
+
+  if (pack.soon) {
+    return (
+      <div
+        onClick={(e) => e.preventDefault()}
+        className="relative rounded-[24px] sm:rounded-[40px] flex flex-col justify-between overflow-hidden group shadow-xs cursor-pointer select-none block transition-all duration-300 hover:shadow-2xl"
+        style={cardStyle}
+      >
+        {content}
+      </div>
+    );
+  }
+
+  return (
+    <Link
+      href={`/brushes/${pack.id}`}
+      className="relative rounded-[24px] sm:rounded-[40px] flex flex-col justify-between overflow-hidden group shadow-xs transition-all duration-300 block cursor-pointer hover:shadow-2xl"
+      style={cardStyle}
+    >
+      {content}
     </Link>
   );
 }
@@ -176,41 +194,14 @@ function BrushListCard({ pack }: { pack: BrushDetailData }) {
   const inkMid = dark ? "rgba(26,25,22,0.55)" : "rgba(250,249,246,0.55)";
   const border = dark ? "rgba(26,25,22,0.2)" : "rgba(250,249,246,0.2)";
 
-  return (
-    <Link
-      href={pack.soon ? "#" : `/brushes/${pack.id}`}
-      className="relative flex items-center justify-between gap-4 rounded-[20px] sm:rounded-[28px] group overflow-hidden shadow-xs block"
-      style={{
-        backgroundColor: pack.bg,
-        padding: "clamp(14px, 2.5vw, 26px) clamp(18px, 3.5vw, 40px)",
-      }}
-      aria-disabled={pack.soon}
-      tabIndex={pack.soon ? -1 : 0}
-    >
-      {pack.soon && (
-        <div
-          className="absolute inset-0 z-20 flex items-center justify-center backdrop-blur-[2px]"
-          style={{ backgroundColor: `${pack.bg}BB` }}
-        >
-          <span
-            className="px-4 py-1.5 rounded-full text-xs font-bold border tracking-widest"
-            style={{
-              color: ink,
-              borderColor: border,
-              fontFamily: "'Bricolage Grotesque', sans-serif",
-            }}
-          >
-            قريبا · Soon
-          </span>
-        </div>
-      )}
-
+  const content = (
+    <>
       {/* Brush title + specimen */}
       <div className="flex flex-col gap-1 flex-1 min-w-0 text-right">
-        <div className="flex items-baseline gap-3">
+        <div className="flex items-baseline gap-3 flex-wrap">
           <h2
             style={{ fontFamily: "'Arsenica', serif", color: ink, fontWeight: 800 }}
-            className="text-2xl sm:text-4xl leading-tight truncate"
+            className="text-2xl sm:text-4xl leading-tight truncate group-hover:scale-[1.02] origin-right transition-transform duration-300"
           >
             {pack.nameAr}
           </h2>
@@ -220,6 +211,20 @@ function BrushListCard({ pack }: { pack: BrushDetailData }) {
           >
             {pack.nameEn}
           </span>
+          {pack.soon && (
+            <span
+              className="px-3 py-1 rounded-full text-xs font-bold border tracking-wider flex items-center gap-1.5 shadow-xs transition-transform duration-300 group-hover:scale-105 select-none shrink-0"
+              style={{
+                color: ink,
+                borderColor: border,
+                backgroundColor: dark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.06)",
+                fontFamily: "'Bricolage Grotesque', sans-serif",
+              }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+              قريباً · Soon
+            </span>
+          )}
         </div>
         <p
           style={{
@@ -251,22 +256,47 @@ function BrushListCard({ pack }: { pack: BrushDetailData }) {
           </span>
         </div>
 
-        {!pack.soon && (
-          <div
-            className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-2 transition-all duration-200 shadow-xs group-hover:scale-105"
-            style={{
-              backgroundColor: ink,
-              color: pack.bg,
-              fontFamily: "'Bricolage Grotesque', sans-serif",
-            }}
-          >
-            <span>تجربة الفرشاة</span>
-            <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
-        )}
+        <div
+          className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-2 transition-all duration-200 shadow-xs group-hover:scale-105"
+          style={{
+            backgroundColor: ink,
+            color: pack.bg,
+            fontFamily: "'Bricolage Grotesque', sans-serif",
+          }}
+        >
+          <span>{pack.soon ? "قريباً" : "تجربة الفرشاة"}</span>
+          <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
       </div>
+    </>
+  );
+
+  const cardStyle = {
+    backgroundColor: pack.bg,
+    padding: "clamp(14px, 2.5vw, 26px) clamp(18px, 3.5vw, 40px)",
+  };
+
+  if (pack.soon) {
+    return (
+      <div
+        onClick={(e) => e.preventDefault()}
+        className="relative flex items-center justify-between gap-4 rounded-[20px] sm:rounded-[28px] group overflow-hidden shadow-xs cursor-pointer select-none block transition-all duration-300"
+        style={cardStyle}
+      >
+        {content}
+      </div>
+    );
+  }
+
+  return (
+    <Link
+      href={`/brushes/${pack.id}`}
+      className="relative flex items-center justify-between gap-4 rounded-[20px] sm:rounded-[28px] group overflow-hidden shadow-xs block cursor-pointer"
+      style={cardStyle}
+    >
+      {content}
     </Link>
   );
 }
@@ -376,8 +406,7 @@ export default function BrushesPage() {
           className="text-sm text-black/50 font-medium mb-8 sm:mb-10 max-w-xl"
           style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
         >
-          {availablePacks.length} حزمة فرش متاحة للتحميل الفوري
-          {activeCategory !== "الكل" && ` في فئة "${activeCategory}"`} بصيغة .gobrushes
+          {availablePacks.length > 0 ? `${availablePacks.length} حزمة فرش متاحة للتحميل الفوري` : "قريباً — فرش نوريّة"} بصيغة .gobrushes
         </p>
 
         {/* Categories & View Switcher Bar */}
@@ -439,7 +468,11 @@ export default function BrushesPage() {
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.2 }}
           className={
-            isListView ? "flex flex-col gap-3 sm:gap-4" : "grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
+            isListView
+              ? "flex flex-col gap-3 sm:gap-4 max-w-2xl mx-auto w-full"
+              : filteredPacks.length === 1
+              ? "max-w-2xl mx-auto w-full"
+              : "grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
           }
         >
           {filteredPacks.length === 0 ? (
@@ -449,7 +482,7 @@ export default function BrushesPage() {
           ) : (
             filteredPacks.map((pack, i) => (
               <RevealCard key={pack.id} delay={i * 0.06}>
-                <motion.div whileHover={{ y: isListView ? -3 : -6 }} transition={{ duration: 0.2 }}>
+                <motion.div whileHover={pack.soon ? undefined : { y: isListView ? -3 : -6 }} transition={{ duration: 0.2 }}>
                   {isListView ? <BrushListCard pack={pack} /> : <BrushGridCard pack={pack} />}
                 </motion.div>
               </RevealCard>

@@ -51,7 +51,7 @@ export default function Preloader() {
           >
             <img
               src="/logo.png"
-              alt="نور محمد"
+              alt="نور منصور"
               className="h-20 sm:h-28 w-auto object-contain drop-shadow-sm"
             />
           </motion.div>
