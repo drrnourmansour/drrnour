@@ -78,22 +78,34 @@ function GridCard({ font }: { font: FontItem }) {
 
   const content = (
     <>
-      {/* Top row — badges */}
-      <div className="flex items-start justify-between w-full z-10">
-        <span
-          className="px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold border tracking-wide"
-          style={{
-            color: inkMid,
-            borderColor: border,
-            fontFamily: "'Bricolage Grotesque', sans-serif",
-          }}
-        >
-          {font.stylesEn}
-        </span>
+      {/* Top row — badges (Responsive layout) */}
+      <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between w-full z-10 gap-2 sm:gap-2">
+        <div className="flex items-center justify-between w-full sm:w-auto gap-2">
+          <span
+            className="px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold border tracking-wide whitespace-nowrap"
+            style={{
+              color: inkMid,
+              borderColor: border,
+              fontFamily: "'Bricolage Grotesque', sans-serif",
+            }}
+          >
+            {font.stylesEn}
+          </span>
+          <span
+            className="sm:hidden px-2.5 py-1 rounded-full text-[10px] font-semibold border tracking-wide whitespace-nowrap"
+            style={{
+              color: inkMid,
+              borderColor: border,
+              fontFamily: "'Bricolage Grotesque', sans-serif",
+            }}
+          >
+            {font.stylesAr}
+          </span>
+        </div>
 
         {font.soon && (
           <span
-            className="px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-bold border tracking-wider flex items-center gap-1.5 shadow-xs transition-transform duration-300 group-hover:scale-105 select-none"
+            className="order-first sm:order-none px-3 sm:px-3.5 py-1 rounded-full text-[10px] sm:text-xs font-bold border tracking-wider flex items-center gap-1.5 shadow-xs transition-transform duration-300 group-hover:scale-105 select-none shrink-0"
             style={{
               color: ink,
               borderColor: border,
@@ -107,7 +119,7 @@ function GridCard({ font }: { font: FontItem }) {
         )}
 
         <span
-          className="px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold border tracking-wide"
+          className="hidden sm:inline-block px-3 py-1 rounded-full text-xs font-semibold border tracking-wide whitespace-nowrap"
           style={{
             color: inkMid,
             borderColor: border,
@@ -119,12 +131,12 @@ function GridCard({ font }: { font: FontItem }) {
       </div>
 
       {/* Center — HUGE font name rendered in the actual typeface with animation */}
-      <div className="flex-1 flex items-center justify-center py-4">
+      <div className="flex-1 flex items-center justify-center py-4 my-auto">
         <h2
           style={{
             fontFamily: font.fontFamily,
             color: ink,
-            fontSize: "clamp(3.5rem, 10vw, 7.5rem)",
+            fontSize: "clamp(2.5rem, 8.5vw, 7rem)",
             lineHeight: 1,
             fontWeight: 700,
             textAlign: "center",
@@ -136,16 +148,17 @@ function GridCard({ font }: { font: FontItem }) {
       </div>
 
       {/* Bottom — specimen lines */}
-      <div className="hidden sm:flex flex-col gap-1">
+      <div className="flex flex-col gap-1 z-10 mt-auto">
         <p
           style={{
             fontFamily: font.fontFamily,
             color: ink,
-            fontSize: "clamp(0.75rem, 1.4vw, 1.1rem)",
+            fontSize: "clamp(0.8rem, 1.4vw, 1.1rem)",
             fontWeight: 400,
             opacity: 0.75,
             textAlign: "right",
           }}
+          className="truncate"
         >
           {font.specimenAr}
         </p>
@@ -159,11 +172,12 @@ function GridCard({ font }: { font: FontItem }) {
               opacity: 0.55,
               direction: "ltr",
             }}
+            className="truncate flex-1 min-w-0"
           >
             {font.specimenEn}
           </p>
           <div
-            className="w-7 h-7 rounded-full border flex items-center justify-center shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110"
+            className="w-7 h-7 rounded-full border flex items-center justify-center shrink-0 opacity-80 sm:opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110"
             style={{ borderColor: border, color: ink }}
           >
             <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
@@ -178,7 +192,7 @@ function GridCard({ font }: { font: FontItem }) {
   const cardStyle = {
     backgroundColor: font.bg,
     minHeight: "clamp(300px, 40vw, 480px)",
-    padding: "clamp(16px, 3vw, 44px)",
+    padding: "clamp(16px, 3.5vw, 44px)",
   };
 
   if (font.soon) {
@@ -217,16 +231,16 @@ function ListCard({ font }: { font: FontItem }) {
     <>
       {/* Font name + specimen */}
       <div className="flex flex-col gap-1 flex-1 min-w-0">
-        <div className="flex items-center gap-3 flex-wrap">
+        <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
           <h2
             style={{ fontFamily: font.fontFamily, color: ink, fontWeight: 700 }}
-            className="text-3xl sm:text-5xl leading-none truncate group-hover:scale-[1.02] origin-right transition-transform duration-300"
+            className="text-2xl sm:text-5xl leading-none truncate group-hover:scale-[1.02] origin-right transition-transform duration-300"
           >
             {font.title}
           </h2>
           {font.soon && (
             <span
-              className="px-3 py-1 rounded-full text-xs font-bold border tracking-wider flex items-center gap-1.5 shadow-xs transition-transform duration-300 group-hover:scale-105 select-none shrink-0"
+              className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold border tracking-wider flex items-center gap-1 shadow-xs transition-transform duration-300 group-hover:scale-105 select-none shrink-0"
               style={{
                 color: ink,
                 borderColor: border,
@@ -246,7 +260,7 @@ function ListCard({ font }: { font: FontItem }) {
             opacity: 0.55,
             fontSize: "0.85rem",
           }}
-          className="hidden sm:block mt-0.5 truncate"
+          className="truncate mt-0.5"
         >
           {font.specimenAr}
         </p>

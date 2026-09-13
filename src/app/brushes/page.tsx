@@ -44,22 +44,36 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
 
   const content = (
     <>
-      {/* Top Row Badges */}
-      <div className="flex items-start justify-between w-full z-10 gap-2">
-        <span
-          className="px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold border tracking-wide"
-          style={{
-            color: inkMid,
-            borderColor: border,
-            fontFamily: "'Bricolage Grotesque', sans-serif",
-          }}
-        >
-          {pack.fileFormat} {pack.fileSize ? `• ${pack.fileSize}` : ""}
-        </span>
+      {/* Top Row Badges — Responsive Layout */}
+      <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between w-full z-10 gap-2 sm:gap-2">
+        <div className="flex items-center justify-between w-full sm:w-auto gap-2">
+          <span
+            className="px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold border tracking-wide whitespace-nowrap"
+            style={{
+              color: inkMid,
+              borderColor: border,
+              fontFamily: "'Bricolage Grotesque', sans-serif",
+            }}
+          >
+            {pack.fileFormat}
+            <span className="hidden sm:inline">{pack.fileSize ? ` • ${pack.fileSize}` : ""}</span>
+          </span>
+
+          <span
+            className="sm:hidden px-2.5 py-1 rounded-full text-[10px] font-semibold border tracking-wide whitespace-nowrap"
+            style={{
+              color: inkMid,
+              borderColor: border,
+              fontFamily: "'Bricolage Grotesque', sans-serif",
+            }}
+          >
+            {pack.stylesAr}
+          </span>
+        </div>
 
         {pack.soon && (
           <span
-            className="px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-bold border tracking-wider flex items-center gap-1.5 shadow-xs transition-transform duration-300 group-hover:scale-105 select-none"
+            className="order-first sm:order-none px-3 sm:px-3.5 py-1 rounded-full text-[10px] sm:text-xs font-bold border tracking-wider flex items-center gap-1.5 shadow-xs transition-transform duration-300 group-hover:scale-105 select-none shrink-0"
             style={{
               color: ink,
               borderColor: border,
@@ -73,7 +87,7 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
         )}
 
         <span
-          className="px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold border tracking-wide"
+          className="hidden sm:inline-block px-3 py-1 rounded-full text-xs font-semibold border tracking-wide whitespace-nowrap"
           style={{
             color: inkMid,
             borderColor: border,
@@ -85,16 +99,16 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
       </div>
 
       {/* Center — Brush Title */}
-      <div className="flex-1 flex flex-col items-center justify-center py-6 text-center">
+      <div className="flex-1 flex flex-col items-center justify-center py-5 sm:py-6 text-center my-auto">
         <h2
           style={{
             fontFamily: "'Arsenica', serif",
             color: ink,
-            fontSize: "clamp(2.4rem, 6.5vw, 4.8rem)",
+            fontSize: "clamp(2rem, 6.5vw, 4.8rem)",
             lineHeight: 1.25,
             fontWeight: 800,
           }}
-          className="group-hover:scale-105 transition-transform duration-300 mb-2 sm:mb-3 select-none"
+          className="group-hover:scale-105 transition-transform duration-300 mb-1.5 sm:mb-3 select-none"
         >
           {pack.nameAr}
         </h2>
@@ -103,29 +117,29 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
             fontFamily: "'Bricolage Grotesque', sans-serif",
             color: inkMid,
           }}
-          className="text-xs sm:text-sm font-semibold tracking-wider uppercase select-none"
+          className="text-[11px] sm:text-sm font-semibold tracking-wider uppercase select-none"
         >
           {pack.nameEn}
         </span>
       </div>
 
       {/* Bottom — Specimen + Action CTA */}
-      <div className="flex flex-col gap-2 z-10">
+      <div className="flex flex-col gap-2 z-10 mt-auto">
         <p
           style={{
             fontFamily: "'Arsenica', serif",
             color: ink,
-            fontSize: "clamp(0.85rem, 1.3vw, 1.1rem)",
+            fontSize: "clamp(0.8rem, 1.3vw, 1.1rem)",
             fontWeight: 600,
             opacity: 0.85,
             textAlign: "right",
           }}
-          className="line-clamp-1"
+          className="line-clamp-1 truncate"
         >
           {pack.specimenAr}
         </p>
 
-        <div className="flex items-center justify-between gap-3 pt-2 border-t" style={{ borderColor: border }}>
+        <div className="flex items-center justify-between gap-2 sm:gap-3 pt-2 border-t" style={{ borderColor: border }}>
           <p
             style={{
               fontFamily: "'Bricolage Grotesque', sans-serif",
@@ -133,13 +147,13 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
               fontSize: "clamp(0.65rem, 1vw, 0.85rem)",
               direction: "ltr",
             }}
-            className="truncate flex-1"
+            className="truncate flex-1 min-w-0"
           >
             {pack.specimenEn}
           </p>
 
           <div
-            className="px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all duration-200 shrink-0 shadow-xs group-hover:scale-105"
+            className="px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold flex items-center gap-1.5 transition-all duration-200 shrink-0 shadow-xs group-hover:scale-105"
             style={{
               backgroundColor: ink,
               color: pack.bg,
@@ -158,8 +172,8 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
 
   const cardStyle = {
     backgroundColor: pack.bg,
-    minHeight: "clamp(320px, 42vw, 490px)",
-    padding: "clamp(18px, 3vw, 44px)",
+    minHeight: "clamp(300px, 42vw, 490px)",
+    padding: "clamp(16px, 3.5vw, 44px)",
   };
 
   if (pack.soon) {
@@ -198,22 +212,22 @@ function BrushListCard({ pack }: { pack: BrushDetailData }) {
     <>
       {/* Brush title + specimen */}
       <div className="flex flex-col gap-1 flex-1 min-w-0 text-right">
-        <div className="flex items-baseline gap-3 flex-wrap">
+        <div className="flex items-baseline gap-2 sm:gap-3 flex-wrap">
           <h2
             style={{ fontFamily: "'Arsenica', serif", color: ink, fontWeight: 800 }}
-            className="text-2xl sm:text-4xl leading-tight truncate group-hover:scale-[1.02] origin-right transition-transform duration-300"
+            className="text-xl sm:text-4xl leading-tight truncate group-hover:scale-[1.02] origin-right transition-transform duration-300"
           >
             {pack.nameAr}
           </h2>
           <span
             style={{ fontFamily: "'Bricolage Grotesque', sans-serif", color: inkMid }}
-            className="text-xs sm:text-sm font-semibold uppercase tracking-wider hidden sm:inline"
+            className="text-[11px] sm:text-sm font-semibold uppercase tracking-wider hidden xs:inline"
           >
             {pack.nameEn}
           </span>
           {pack.soon && (
             <span
-              className="px-3 py-1 rounded-full text-xs font-bold border tracking-wider flex items-center gap-1.5 shadow-xs transition-transform duration-300 group-hover:scale-105 select-none shrink-0"
+              className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold border tracking-wider flex items-center gap-1.5 shadow-xs transition-transform duration-300 group-hover:scale-105 select-none shrink-0"
               style={{
                 color: ink,
                 borderColor: border,
@@ -231,40 +245,36 @@ function BrushListCard({ pack }: { pack: BrushDetailData }) {
             fontFamily: "'Arsenica', serif",
             color: ink,
             opacity: 0.65,
-            fontSize: "0.9rem",
+            fontSize: "0.85rem",
           }}
-          className="hidden sm:block truncate"
+          className="truncate"
         >
           {pack.specimenAr}
         </p>
       </div>
 
       {/* Badges & Action Button */}
-      <div className="flex items-center gap-4 shrink-0">
-        <div className="hidden md:flex flex-col items-end gap-0.5 text-left">
+      <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+        <div className="hidden sm:flex flex-col items-end gap-0.5 text-left">
           <span
             style={{ color: inkMid, fontFamily: "'Bricolage Grotesque', sans-serif" }}
             className="text-xs font-bold"
           >
-            {pack.stylesAr}
+            {pack.fileFormat}
           </span>
           <span
             style={{ color: inkMid, fontFamily: "'Bricolage Grotesque', sans-serif" }}
-            className="text-[10px] tracking-wide uppercase"
+            className="text-[11px] opacity-75"
           >
-            {pack.fileFormat} {pack.fileSize ? `• ${pack.fileSize}` : ""}
+            {pack.stylesAr}
           </span>
         </div>
 
         <div
-          className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-2 transition-all duration-200 shadow-xs group-hover:scale-105"
-          style={{
-            backgroundColor: ink,
-            color: pack.bg,
-            fontFamily: "'Bricolage Grotesque', sans-serif",
-          }}
+          className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-bold border flex items-center gap-1.5 transition-all duration-200 group-hover:scale-105"
+          style={{ borderColor: border, color: ink }}
         >
-          <span>{pack.soon ? "قريباً" : "تجربة الفرشاة"}</span>
+          <span>{pack.soon ? "قريباً" : "تجربة"}</span>
           <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
             <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -272,10 +282,9 @@ function BrushListCard({ pack }: { pack: BrushDetailData }) {
       </div>
     </>
   );
-
   const cardStyle = {
     backgroundColor: pack.bg,
-    padding: "clamp(14px, 2.5vw, 26px) clamp(18px, 3.5vw, 40px)",
+    padding: "clamp(12px, 2.5vw, 28px) clamp(16px, 3.5vw, 44px)",
   };
 
   if (pack.soon) {
