@@ -5,6 +5,7 @@ import Preloader from "@/components/Preloader";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import TransitionProvider from "@/components/TransitionProvider";
+import ThemeProvider from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://drrnour.com"),
@@ -138,8 +139,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -152,15 +158,17 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-offwhite text-ink font-sans antialiased selection:bg-ink selection:text-offwhite flex flex-col min-h-screen">
-        <TransitionProvider>
-          <Preloader />
-          <Navbar />
-          <PageTransition>
-            <div className="flex-1">{children}</div>
-            <Footer />
-          </PageTransition>
-        </TransitionProvider>
+      <body className="bg-offwhite dark:bg-[#141311] text-ink dark:text-offwhite font-sans antialiased selection:bg-ink selection:text-offwhite dark:selection:bg-offwhite dark:selection:text-ink flex flex-col min-h-screen">
+        <ThemeProvider>
+          <TransitionProvider>
+            <Preloader />
+            <Navbar />
+            <PageTransition>
+              <div className="flex-1">{children}</div>
+              <Footer />
+            </PageTransition>
+          </TransitionProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

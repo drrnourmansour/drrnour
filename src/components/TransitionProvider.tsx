@@ -56,7 +56,7 @@ export default function TransitionProvider({ children }: { children: React.React
         {phase !== "idle" && (
           <motion.div
             key={phase}
-            className="fixed inset-0 z-[9999] bg-white pointer-events-none"
+            className="fixed inset-0 z-[9999] bg-white dark:bg-[#141311] pointer-events-none"
             initial={{ opacity: phase === "covering" ? 0 : 1 }}
             animate={{ opacity: phase === "covering" ? 1 : 0 }}
             transition={{ duration: 0.28, ease: "easeInOut" }}

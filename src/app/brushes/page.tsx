@@ -205,8 +205,8 @@ function BrushGridCard({ pack }: { pack: BrushDetailData }) {
 function BrushListCard({ pack }: { pack: BrushDetailData }) {
   const dark = pack.textColor === "dark";
   const ink = dark ? "#1A1916" : "#FAF9F6";
-  const inkMid = dark ? "rgba(26,25,22,0.55)" : "rgba(250,249,246,0.55)";
-  const border = dark ? "rgba(26,25,22,0.2)" : "rgba(250,249,246,0.2)";
+  const inkMid = dark ? "rgba(26,25,22,0.75)" : "rgba(250,249,246,0.75)";
+  const border = dark ? "rgba(26,25,22,0.28)" : "rgba(250,249,246,0.28)";
 
   const content = (
     <>
@@ -314,16 +314,13 @@ function BrushListCard({ pack }: { pack: BrushDetailData }) {
    NEWSLETTER SECTION
 ───────────────────────────────────────── */
 function Newsletter() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <motion.section
-      ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="mt-16 sm:mt-24 mb-12 sm:mb-20 rounded-[28px] sm:rounded-[44px] overflow-hidden"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.05 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="mt-16 sm:mt-24 mb-12 sm:mb-20 rounded-[28px] sm:rounded-[44px] overflow-hidden border border-transparent dark:border-white/15"
       style={{ backgroundColor: "#1A1916", padding: "clamp(32px, 5vw, 72px)" }}
     >
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
@@ -335,7 +332,7 @@ function Newsletter() {
             ابق على اطّلاع
           </h2>
           <p
-            style={{ fontFamily: "'Bricolage Grotesque', sans-serif", color: "rgba(250,249,246,0.5)" }}
+            style={{ fontFamily: "'Bricolage Grotesque', sans-serif", color: "rgba(250,249,246,0.6)" }}
             className="text-sm sm:text-base"
           >
             استقبل تحديثات عن الفرش الجديدة والخطوط الرقمية
@@ -347,6 +344,8 @@ function Newsletter() {
           dir="rtl"
         >
           <input
+            id="brushes-newsletter-email"
+            name="email"
             type="email"
             placeholder="بريدك الإلكتروني"
             className="flex-1 sm:w-64 px-4 py-3 rounded-full text-sm outline-none border border-white/10 focus:border-white/30 transition-colors"
@@ -393,29 +392,31 @@ export default function BrushesPage() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/5 border border-black/10 text-xs font-bold text-black/70 mb-4"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 text-xs font-bold text-black/70 dark:text-offwhite/80 mb-4"
           style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
         >
-          <Sparkles className="w-3.5 h-3.5 text-[#E8C87A]" />
-          <span>أدوات الخط والرسم الرقمي · Digital Calligraphy &amp; Brushes</span>
+          <span className="inline-flex items-center justify-center w-5 h-5 rounded-md bg-gradient-to-br from-[#F6DC8D] via-[#E8C87A] to-[#B8923A] shadow-[0_2px_6px_rgba(232,200,122,0.55),inset_0_1px_1px_rgba(255,255,255,0.8)]">
+            <Sparkles className="w-3 h-3 text-[#1A1916]" />
+          </span>
+          <span>أدوات الخط والرسم الرقمي · Digital Brushes</span>
         </motion.div>
 
-        <h1 className="font-serif text-4xl sm:text-7xl font-black text-black mb-3 sm:mb-4 leading-normal sm:leading-tight">
-          فرش الخط العربي الرقمي
+        <h1 className="font-serif text-4xl sm:text-7xl font-black text-black dark:text-offwhite mb-3 sm:mb-4 leading-normal sm:leading-tight">
+          فرش رقمية
         </h1>
 
         <p
-          className="text-lg sm:text-2xl font-semibold text-black/80 mb-3 sm:mb-4"
+          className="text-lg sm:text-2xl font-semibold text-black/80 dark:text-offwhite/80 mb-3 sm:mb-4"
           style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
         >
-          Arabic Calligraphy &amp; Digital Brushes
+          Digital Brushes
         </p>
 
         <p
-          className="text-sm text-black/50 font-medium mb-8 sm:mb-10 max-w-xl"
+          className="text-sm text-black/50 dark:text-offwhite/50 font-medium mb-8 sm:mb-10 max-w-xl"
           style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}
         >
-          {availablePacks.length > 0 ? `${availablePacks.length} حزمة فرش متاحة للتحميل الفوري` : "قريباً — فرش نوريّة"} بصيغة .gobrushes
+          {availablePacks.length > 0 ? `${availablePacks.length} حزمة فرش متاحة للتحميل الفوري` : "قريباً · Soon"}
         </p>
 
         {/* Categories & View Switcher Bar */}
@@ -426,30 +427,30 @@ export default function BrushesPage() {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-2 rounded-full font-serif text-sm sm:text-base font-bold transition-all duration-200 ${
                 activeCategory === cat
-                  ? "bg-[#1A1916] text-[#FAF9F6] shadow-sm"
-                  : "bg-black/[0.05] text-black/60 hover:bg-black/10"
+                  ? "bg-[#1A1916] text-[#FAF9F6] dark:bg-offwhite dark:text-ink shadow-sm"
+                  : "bg-black/[0.05] dark:bg-white/10 text-black/60 dark:text-offwhite/70 hover:bg-black/10 dark:hover:bg-white/15"
               }`}
             >
               {cat}
             </button>
           ))}
 
-          <div className="w-px h-6 bg-black/15 mx-1 hidden sm:block" />
+          <div className="w-px h-6 bg-black/15 dark:bg-white/15 mx-1 hidden sm:block" />
 
           {/* Grid / List Switcher */}
           <div
             dir="ltr"
-            className="bg-black/[0.07] rounded-full p-1 inline-flex items-center relative gap-1 shadow-inner select-none"
+            className="bg-black/[0.07] dark:bg-white/10 rounded-full p-1 inline-flex items-center relative gap-1 shadow-inner select-none"
           >
             <motion.div
-              className="absolute top-1 left-1 w-8 h-8 rounded-full bg-[#1A1916] z-10 shadow-md"
+              className="absolute top-1 left-1 w-8 h-8 rounded-full bg-[#1A1916] dark:bg-offwhite z-10 shadow-md"
               animate={{ x: isListView ? 0 : 36 }}
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
             />
             <button
               onClick={() => setIsListView(true)}
               className={`w-8 h-8 rounded-full flex items-center justify-center z-20 transition-colors duration-200 ${
-                isListView ? "text-[#FAF9F6]" : "text-black/70"
+                isListView ? "text-[#FAF9F6] dark:text-[#1A1916]" : "text-black/70 dark:text-offwhite/70"
               }`}
               title="عرض قائمة"
             >
@@ -458,7 +459,7 @@ export default function BrushesPage() {
             <button
               onClick={() => setIsListView(false)}
               className={`w-8 h-8 rounded-full flex items-center justify-center z-20 transition-colors duration-200 ${
-                !isListView ? "text-[#FAF9F6]" : "text-black/70"
+                !isListView ? "text-[#FAF9F6] dark:text-[#1A1916]" : "text-black/70 dark:text-offwhite/70"
               }`}
               title="عرض شبكي"
             >

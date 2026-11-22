@@ -104,7 +104,12 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease, color 0.3s ease;
+}
+
+.dark body {
+  background-color: #141311;
+  color: #FAF9F6;
 }
 
 html {
@@ -127,6 +132,11 @@ html {
   background-size: 24px 24px;
 }
 
+.dark .body-journal {
+  background-color: #141311;
+  background-image: radial-gradient(rgba(250, 249, 246, 0.10) 1px, transparent 1px);
+}
+
 /* Custom Minimalist Scrollbar (Type Foundry Aesthetics) */
 ::-webkit-scrollbar {
   width: 7px;
@@ -137,13 +147,25 @@ html {
   background: #FAF9F6;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #141311;
+}
+
 ::-webkit-scrollbar-thumb {
   background: rgba(26, 25, 22, 0.22);
   border-radius: 99px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(250, 249, 246, 0.22);
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(26, 25, 22, 0.50);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(250, 249, 246, 0.50);
 }
 
 * {
